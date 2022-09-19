@@ -9,7 +9,7 @@ function ChangeFlight(props) {
         >
             <Modal.Header closeButton className='bg-secondary bg-opacity-10'>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    เปลี่ยนเที่ยวบิน
+                    <h2>เปลี่ยนเที่ยวบิน</h2>
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body className="bg-secondary bg-opacity-10">
@@ -17,7 +17,7 @@ function ChangeFlight(props) {
                     <Container className='px-5 py-3'>
                         <Row className='pb-3'>
                             <Col lg={4}>
-                                <Form.Group>
+                                <Form.Group className='shadow-sm rounded'>
                                     <Form.Control
                                         type="text"
                                         autoFocus
@@ -25,7 +25,7 @@ function ChangeFlight(props) {
                                 </Form.Group>
                             </Col>
                             <Col lg={8}>
-                                <Form.Group>
+                                <Form.Group className='shadow-sm rounded'>
                                     <Form.Control
                                         type="text"
                                         autoFocus
@@ -40,6 +40,7 @@ function ChangeFlight(props) {
                                     <Form.Control
                                         type="text"
                                         autoFocus
+                                        className='shadow-sm rounded'
                                     />
                                 </Form.Group>
                             </Col>
@@ -49,6 +50,7 @@ function ChangeFlight(props) {
                                     <Form.Control
                                         type="text"
                                         autoFocus
+                                        className='shadow-sm rounded'
                                     />
                                 </Form.Group>
                             </Col>
@@ -58,6 +60,7 @@ function ChangeFlight(props) {
                                     <Form.Control
                                         type="text"
                                         autoFocus
+                                        className='shadow-sm rounded'
                                     />
                                 </Form.Group>
                             </Col>
@@ -69,6 +72,7 @@ function ChangeFlight(props) {
                                     <Form.Control
                                         type="text"
                                         autoFocus
+                                        className='shadow-sm rounded'
                                     />
                                 </Form.Group>
                             </Col>
@@ -78,6 +82,7 @@ function ChangeFlight(props) {
                                     <Form.Control
                                         type="text"
                                         autoFocus
+                                        className='shadow-sm rounded'
                                     />
                                 </Form.Group>
                             </Col>
@@ -88,7 +93,7 @@ function ChangeFlight(props) {
                                         type="submit"
                                         value="Change"
                                         autoFocus
-                                        className='bg-primary w-100'
+                                        className='bg-primary w-100 shadow-sm rounded'
                                     />
                                 </Form.Group>
                             </Col>
