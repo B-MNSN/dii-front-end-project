@@ -6,7 +6,6 @@ function ChangeFlight(props) {
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
-
         >
             <Modal.Header closeButton className='bg-secondary bg-opacity-10'>
                 <Modal.Title id="contained-modal-title-vcenter">
