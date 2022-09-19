@@ -14,7 +14,7 @@ function ColorSchemesExample() {
             <Nav.Link className='text-light' href="#">BOOK FLIGHT</Nav.Link>
             <Nav.Link className='text-light' href="#">RESERVATIONS</Nav.Link>
             <Nav.Link className='text-light' href="#">HELP</Nav.Link>
-            <NavDropdown title=<FaUserAlt className='ms-3 ' size={'25'} color={'#ffffff'}/>>
+            <NavDropdown title=<FaUserAlt className='ms-3 ' size={'25'} color={'#ffffff'} />>
               <NavDropdown.Item href='#'>Sign in</NavDropdown.Item>
               <NavDropdown.Item href='#'>Sing out</NavDropdown.Item>
             </NavDropdown>
