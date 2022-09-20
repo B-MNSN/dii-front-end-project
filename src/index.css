@@ -58,3 +58,20 @@ main {
     color: #ffffff;
     border-bottom: 3px solid #ffffff;
 }
+
+/* ChangeFlight */
+.btnChange {
+    background-color: #02457A;
+    color: #ffffff;
+    
+}
+.btnCabinClass, .btnFlight {
+    border: none;
+    color: black;
+}
+.btnCabinClass:hover, .btnFlight:hover, .btnChangeFlight{
+    border: none;
+    background: #02457A;
+    color: #ffffff;
+}
+
