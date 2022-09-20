@@ -1,30 +1,19 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import './App.css';
 import './index.css';
-// import Navbar from './components/Navbar';
-import Login from './components/Login';
-// import ChangeFlight from './components/ChangeFlight';
-// import { useState } from 'react';
-// import { Button } from 'react-bootstrap';
+import Navbar from './components/Navbar';
+// import Login from './components/Login';
+// import Signup from './components/Signup';
 import Container from './components/Container';
+import Flight from './components/Flight';
 
 function App() {
-  // const [modalShow, setModalShow] = useState(false);
-
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <Container>
-          <Login/>
+          <Flight/>
       </Container>
-      {/* <Button variant="primary" onClick={() => setModalShow(true)}>
-        Something
-      </Button> */}
-      
-      {/* <ChangeFlight
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      /> */}
     </>
   );
 }
