@@ -5,7 +5,7 @@ import logo from '../logo.png';
 function Signup() {
   return (
     <>
-    <div className=' w-100 h-100 d-flex flex-column justify-content-center align-items-center'>
+    <div className='signup-page w-100 h-100 d-flex flex-column justify-content-center align-items-center'>
         <img src={logo} alt='logo' className='logo mt-3'/>
         <div className='signup-bg mt-3 rounded-3'>
             <div className='d-flex justify-content-end mt-3 me-4'>
