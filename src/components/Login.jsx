@@ -7,13 +7,16 @@ function Login() {
     <>
         <img src={logo} alt='logo' className='logo mt-3'/>
         <div className='login-bg mt-3 rounded-3'>
+            <div className='d-flex justify-content-end mt-3 me-4'>
+                <button className='tab-signin fw-bolder'>Sign in</button>
+                <button className='tab-signup fw-bolder'>Sign up</button>
+            </div>
             <Form className='m-5'>
-            <h1 className='fs-3 mb-3 fw-bolder'>Log in to your account</h1>
+            <h1 className='fs-3 mb-3 fw-bolder'>Log into your account</h1>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email or Username</Form.Label>
                     <Form.Control type="email" placeholder="Enter email or username" />
                 </Form.Group>
-
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" />
