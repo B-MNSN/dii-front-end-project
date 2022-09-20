@@ -3,20 +3,22 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { FaUserAlt } from 'react-icons/fa';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import logo from '../logo.png';
+
 
 function ColorSchemesExample() {
   return (
     <>
-      <Navbar variant="light" className='nav'>
+      <Navbar variant="light" className='nav shadow'>
         <Container>
-          <Navbar.Brand href="/" className='text-light'>BUN AL</Navbar.Brand>
+          <Navbar.Brand href="/" className='text-light'><img src={logo} alt='logo' className='logoBrand'/></Navbar.Brand>
           <Nav>
-            <Nav.Link className='text-light' href="#">BOOK FLIGHT</Nav.Link>
-            <Nav.Link className='text-light' href="#">RESERVATIONS</Nav.Link>
-            <Nav.Link className='text-light' href="#">HELP</Nav.Link>
-            <NavDropdown title=<FaUserAlt className='ms-3 ' size={'25'} color={'#ffffff'} />>
-              <NavDropdown.Item href='#'>Sign in</NavDropdown.Item>
-              <NavDropdown.Item href='#'>Sing out</NavDropdown.Item>
+            <Nav.Link className='text-light fw-bold' href="#">Book Flight</Nav.Link>
+            <Nav.Link className='text-light fw-bold' href="#">Reservations</Nav.Link>
+            <Nav.Link className='text-light fw-bold' href="#">Help</Nav.Link>
+            <NavDropdown className='' align="end" id="basic-nav-dropdown" title=<FaUserAlt className='ms-3' size={'25'} color={'#ffffff'} />>
+              <NavDropdown.Item href='#'>Signin</NavDropdown.Item>
+              <NavDropdown.Item href='#'>Singout</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Container>
