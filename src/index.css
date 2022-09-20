@@ -5,16 +5,16 @@
     font-family: 'Noto Sans Thai', sans-serif;
 }
 
-html{
+html {
     height: 100%;
 }
 
-body {
+/* body {
     margin: 0;
     background: linear-gradient(180deg, rgba(1, 138, 190, 0.6) 0%, rgba(32, 91, 138, 0.4) 100%);
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */
 
 .nav {
     background-color: #02457A;
@@ -42,4 +42,19 @@ main {
 .buttonLogin {
     background-color: #02457A;
 
+}
+
+/* For bg Main theme color */
+.bg-blue {
+    background-color: #02457A;
+}
+
+/* For BookingSearch */
+.B-seachButton {
+    background-color: #02457A;
+    size: 5rem;
+}
+
+.B-inputBox {
+    background-color: #ECE8E8;
 }
