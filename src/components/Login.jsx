@@ -5,6 +5,7 @@ import logo from '../logo.png';
 function Login() {
   return (
     <>
+    <div className='login-page'>
         <img src={logo} alt='logo' className='logo mt-3'/>
         <div className='login-bg mt-3 rounded-3'>
             <div className='d-flex justify-content-end mt-3 me-4'>
@@ -29,6 +30,7 @@ function Login() {
                 </div>
             </Form>
         </div>
+    </div>
     </>
     
   );
