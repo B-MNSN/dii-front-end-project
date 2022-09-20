@@ -1,15 +1,11 @@
 import { Modal, Container, Row, Col, Form } from 'react-bootstrap';
+
 function ChangeFlight(props) {
     return (
-        <Modal
-            {...props}
-            size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-        >
+        <Modal {...props} size="xl" aria-labelledby="contained-modal-title-vcenter" centered>
             <Modal.Header closeButton className='bg-secondary bg-opacity-10'>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    <h2>เปลี่ยนเที่ยวบิน</h2>
+                    <h2 className='ms-3 mt-1 mb-0 fw-bold'>เปลี่ยนเที่ยวบิน</h2>
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body className="bg-secondary bg-opacity-10">
@@ -17,26 +13,24 @@ function ChangeFlight(props) {
                     <Container className='px-5 py-3'>
                         <Row className='pb-3'>
                             <Col lg={4}>
-                                <Form.Group className='shadow-sm rounded'>
-                                    <Form.Control
-                                        type="text"
-                                        autoFocus
-                                    ></Form.Control>
-                                </Form.Group>
+                                <div className='d-flex justify-content-space-around shadow-sm rounded-3 border border-1'>
+                                    <button className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3'>เที่ยวเดียว</button>
+                                    <button className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3'>ไป-กลับ</button>
+                                </div>
                             </Col>
                             <Col lg={8}>
-                                <Form.Group className='shadow-sm rounded'>
-                                    <Form.Control
-                                        type="text"
-                                        autoFocus
-                                    />
-                                </Form.Group>
+                                <div className=' d-flex justify-content-center shadow-sm rounded-3 border border-1'>
+                                    <button className='btnCabinClass fw-bold rounded-5 px-4 my-2 mx-3'>Economy </button>
+                                    <button className='btnCabinClass fw-bold rounded-5 px-3 my-2 mx-3'>Premium economy</button>
+                                    <button className='btnCabinClass fw-bold rounded-5 px-3 my-2 mx-3'>Business class </button>
+                                    <button className='btnCabinClass fw-bold rounded-5 px-3 my-2 mx-3'>First class</button>
+                                </div>
                             </Col>
                         </Row>
                         <Row className='pb-3'>
                             <Col lg={4}>
                                 <Form.Group>
-                                    <Form.Label>ต้นทาง</Form.Label>
+                                    <Form.Label className='fw-bold'>ต้นทาง</Form.Label>
                                     <Form.Control
                                         type="text"
                                         autoFocus
@@ -46,7 +40,7 @@ function ChangeFlight(props) {
                             </Col>
                             <Col lg={4}>
                                 <Form.Group>
-                                    <Form.Label>ปลายทาง</Form.Label>
+                                    <Form.Label className='fw-bold'>ปลายทาง</Form.Label>
                                     <Form.Control
                                         type="text"
                                         autoFocus
@@ -56,7 +50,7 @@ function ChangeFlight(props) {
                             </Col>
                             <Col lg={4}>
                                 <Form.Group>
-                                    <Form.Label>วันออกเดินทาง</Form.Label>
+                                    <Form.Label className='fw-bold'>วันออกเดินทาง</Form.Label>
                                     <Form.Control
                                         type="text"
                                         autoFocus
@@ -68,7 +62,7 @@ function ChangeFlight(props) {
                         <Row>
                             <Col lg={4}>
                                 <Form.Group>
-                                    <Form.Label>วันเดินทางกลับ</Form.Label>
+                                    <Form.Label className='fw-bold'>วันเดินทางกลับ</Form.Label>
                                     <Form.Control
                                         type="text"
                                         autoFocus
@@ -78,7 +72,7 @@ function ChangeFlight(props) {
                             </Col>
                             <Col lg={4}>
                                 <Form.Group>
-                                    <Form.Label>ผู้โดยสาร</Form.Label>
+                                    <Form.Label className='fw-bold'>ผู้โดยสาร</Form.Label>
                                     <Form.Control
                                         type="text"
                                         autoFocus
@@ -86,14 +80,14 @@ function ChangeFlight(props) {
                                     />
                                 </Form.Group>
                             </Col>
-                            <Col lg={4} className='d-flex justify-content-center align-items-center'>
+                            <Col lg={4} className='d-flex justify-content-end align-items-center'>
                                 <Form.Group >
                                     <Form.Label></Form.Label>
                                     <Form.Control
                                         type="submit"
                                         value="Change"
                                         autoFocus
-                                        className='bg-primary w-100 shadow-sm rounded'
+                                        className='btnChange shadow-sm rounded-3 fw-bold px-5 py-1' 
                                     />
                                 </Form.Group>
                             </Col>
