@@ -5,11 +5,11 @@
     font-family: 'Noto Sans Thai', sans-serif;
 }
 
-html{
+html {
     height: 100%;
 }
 
-body {
+/* body {
     margin: 0;
     
 }
@@ -18,7 +18,7 @@ body {
     background: linear-gradient(180deg, rgba(1, 138, 190, 0.6) 0%, rgba(32, 91, 138, 0.4) 100%);
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */
 
 .nav {
     background-color: #02457A;
@@ -50,6 +50,39 @@ main {
     background-color: #02457A;
 
 }
+
+/* For bg Main theme color */
+.bg-blue {
+    background-color: #02457A;
+}
+
+/* For BookingSearch */
+.B-seachButton {
+    background-color: #02457A;
+    size: 5rem;
+}
+
+.B-inputBox {
+    background-color: #ECE8E8;
+}
+
+/* For Home */
+.H-mainPic {
+    width: 100%;
+    height: 24rem;
+    object-fit: cover;
+}
+
+.H-seachBox {
+    z-index: 1;
+    width: 75%;
+    top: 19rem
+}
+
+.H-seachBoxContainer {
+    height: 32rem;
+    width: 100%;
+    max-width: 1440px;
 .tab-signin, .tab-signup{
     background: none;
     border: none;
@@ -75,3 +108,20 @@ main {
     color: #ffffff;
 }
 
+
+}
+
+.btnCabinClass,
+.btnFlight {
+    border: none;
+    color: black;
+}
+
+.btnCabinClass:hover,
+.btnFlight:hover,
+.btnChangeFlight {
+    border: none;
+    background: #02457A;
+    color: #ffffff;
+}
+}

@@ -1,7 +1,7 @@
 import propType from 'prop-types';
 
-function Container({children}){
-    return  (
+function Container({ children }) {
+    return (
         <main>{children}</main>
     );
 }
