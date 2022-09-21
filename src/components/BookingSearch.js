@@ -1,21 +1,21 @@
 import React from 'react';
-import { Form, Container, Row, Col, Button } from 'react-bootstrap';
-import { FaSearch } from 'react-icons/fa';
+import { Form, Container, Row, Col} from 'react-bootstrap';
+import { RiSearchLine } from 'react-icons/ri';
 
 function BookingSearch() {
     return (
         <>
-            <div className='w-75 rounded shadow bg-light d-flex justify-content-center'>
-                <Form className=''>
+            <div className='rounded shadow bg-light d-flex justify-content-center'>
+                <Form>
                     <Container className=' py-3'>
-                        <Row className='pb-3 justify-content-center'>
+                        <Row className='pb-3 d-flex justify-content-center'>
                             <Col lg={3}>
                                 <div className='d-flex justify-content-space-around shadow-sm rounded-3 border border-1'>
                                     <button className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3'>เที่ยวเดียว</button>
                                     <button className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3'>ไป-กลับ</button>
                                 </div>
                             </Col>
-                            <Col lg={6}>
+                            <Col lg={7}>
                                 <div className=' d-flex justify-content-center shadow-sm rounded-3 border border-1'>
                                     <button className='btnCabinClass fw-bold rounded-5 px-4 my-2 mx-3'>Economy </button>
                                     <button className='btnCabinClass fw-bold rounded-5 px-3 my-2 mx-3'>Premium economy</button>
@@ -24,10 +24,10 @@ function BookingSearch() {
                                 </div>
                             </Col>
                         </Row>
-                        <Row className='justify-content-center'>
+                        <Row className='d-flex justify-content-center'>
                             <Col lg={2}>
                                 <Form.Group>
-                                    <Form.Label>จาก</Form.Label>
+                                    <Form.Label className='fw-bold'>ต้นทาง</Form.Label>
                                     <Form.Control
                                         type="text"
                                         autoFocus
@@ -37,7 +37,7 @@ function BookingSearch() {
                             </Col>
                             <Col lg={2}>
                                 <Form.Group>
-                                    <Form.Label>ไป</Form.Label>
+                                    <Form.Label className='fw-bold'>ปลายทาง</Form.Label>
                                     <Form.Control
                                         type="text"
                                         autoFocus
@@ -47,7 +47,7 @@ function BookingSearch() {
                             </Col>
                             <Col lg={2}>
                                 <Form.Group>
-                                    <Form.Label>วันออกเดินทาง</Form.Label>
+                                    <Form.Label className='fw-bold'>วันออกเดินทาง</Form.Label>
                                     <Form.Control
                                         type="text"
                                         autoFocus
@@ -57,7 +57,7 @@ function BookingSearch() {
                             </Col>
                             <Col lg={2}>
                                 <Form.Group>
-                                    <Form.Label>วันเดินทางกลับ</Form.Label>
+                                    <Form.Label className='fw-bold'>วันเดินทางกลับ</Form.Label>
                                     <Form.Control
                                         type="text"
                                         autoFocus
@@ -67,7 +67,7 @@ function BookingSearch() {
                             </Col>
                             <Col lg={2}>
                                 <Form.Group>
-                                    <Form.Label>ผู้โดยสาร</Form.Label>
+                                    <Form.Label className='fw-bold'>ผู้โดยสาร</Form.Label>
                                     <Form.Control
                                         type="text"
                                         autoFocus
@@ -76,7 +76,7 @@ function BookingSearch() {
                                 </Form.Group>
                             </Col>
                             <Col lg={1} className='d-flex justify-content-center align-items-end'>
-                                <Button href='#' className='B-seachButton'><FaSearch color={'#ffffff'} /></Button>
+                                <button href='#' className='B-seachButton shadow-sm rounded-2'><RiSearchLine size={25} color={'#ffffff'} /></button>
                             </Col>
                         </Row>
                     </Container>

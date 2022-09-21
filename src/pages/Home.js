@@ -2,13 +2,13 @@ import React from 'react';
 import BookingSearch from '../components/BookingSearch';
 import { Container, Row, Card, Button } from 'react-bootstrap';
 function Home() {
-    const mainPic = require('../Elements/sea.jpg')
+    const mainPic = require('../Elements/airplane-bg.jpg')
     return (
         <>
             <Container fluid='lg'>
                 <Row className='mt-3 mx-0 H-seachBoxContainer position-relative'>
-                    <div className='H-seachBox d-flex justify-content-center position-absolute w-100'>
-                        <BookingSearch />
+                    <div className='H-seachBox d-flex justify-content-center position-absolute'>
+                        <BookingSearch/>
                     </div>
                     <img src={mainPic} className='H-mainPic rounded p-0 shadow' alt='...' />
                 </Row>
