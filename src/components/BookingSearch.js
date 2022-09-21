@@ -9,23 +9,19 @@ function BookingSearch() {
                 <Form className=''>
                     <Container className=' py-3'>
                         <Row className='pb-3 justify-content-center'>
-                            <Col lg={6}>
-                                <Form.Group className='shadow-sm rounded'>
-                                    <Form.Control
-                                        type="text"
-                                        autoFocus
-                                        className='B-inputBox'
-                                    ></Form.Control>
-                                </Form.Group>
-                            </Col>
                             <Col lg={3}>
-                                <Form.Group className='shadow-sm rounded'>
-                                    <Form.Control
-                                        type="text"
-                                        autoFocus
-                                        className='B-inputBox'
-                                    />
-                                </Form.Group>
+                                <div className='d-flex justify-content-space-around shadow-sm rounded-3 border border-1'>
+                                    <button className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3'>เที่ยวเดียว</button>
+                                    <button className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3'>ไป-กลับ</button>
+                                </div>
+                            </Col>
+                            <Col lg={6}>
+                                <div className=' d-flex justify-content-center shadow-sm rounded-3 border border-1'>
+                                    <button className='btnCabinClass fw-bold rounded-5 px-4 my-2 mx-3'>Economy </button>
+                                    <button className='btnCabinClass fw-bold rounded-5 px-3 my-2 mx-3'>Premium economy</button>
+                                    <button className='btnCabinClass fw-bold rounded-5 px-3 my-2 mx-3'>Business class </button>
+                                    <button className='btnCabinClass fw-bold rounded-5 px-3 my-2 mx-3'>First class</button>
+                                </div>
                             </Col>
                         </Row>
                         <Row className='justify-content-center'>
