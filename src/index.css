@@ -77,3 +77,24 @@ main {
     width: 100%;
     max-width: 1440px;
 }
+
+/* ChangeFlight */
+.btnChange {
+    background-color: #02457A;
+    color: #ffffff;
+
+}
+
+.btnCabinClass,
+.btnFlight {
+    border: none;
+    color: black;
+}
+
+.btnCabinClass:hover,
+.btnFlight:hover,
+.btnChangeFlight {
+    border: none;
+    background: #02457A;
+    color: #ffffff;
+}
