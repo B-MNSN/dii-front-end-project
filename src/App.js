@@ -7,7 +7,7 @@ import Navbar from './components/Navbar';
 // import { useState } from 'react';
 // import { Button } from 'react-bootstrap';
 import Container from './components/Container';
-import BookingSearch from './components/BookingSearch';
+import Home from './pages/Home';
 
 function App() {
 
@@ -15,7 +15,7 @@ function App() {
     <>
       <Navbar />
       <Container>
-        <BookingSearch />
+        <Home />
       </Container>
     </>
   );

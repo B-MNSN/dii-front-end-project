@@ -58,3 +58,22 @@ main {
 .B-inputBox {
     background-color: #ECE8E8;
 }
+
+/* For Home */
+.H-mainPic {
+    width: 100%;
+    height: 24rem;
+    object-fit: cover;
+}
+
+.H-seachBox {
+    z-index: 1;
+    width: 75%;
+    top: 19rem
+}
+
+.H-seachBoxContainer {
+    height: 32rem;
+    width: 100%;
+    max-width: 1440px;
+}

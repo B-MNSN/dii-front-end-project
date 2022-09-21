@@ -5,8 +5,8 @@ import { FaSearch } from 'react-icons/fa';
 function BookingSearch() {
     return (
         <>
-            <div className=' w-75 rounded shadow'>
-                <Form>
+            <div className='w-75 rounded shadow bg-light d-flex justify-content-center'>
+                <Form className=''>
                     <Container className=' py-3'>
                         <Row className='pb-3 justify-content-center'>
                             <Col lg={6}>
