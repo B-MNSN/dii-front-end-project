@@ -44,21 +44,6 @@ main {
 
 }
 
-/* For bg Main theme color */
-.bg-blue {
-    background-color: #02457A;
-}
-
-/* For BookingSearch */
-.B-seachButton {
-    background-color: #02457A;
-    size: 5rem;
-}
-
-.B-inputBox {
-    background-color: #ECE8E8;
-}
-
 /* For Home */
 .H-mainPic {
     width: 100%;
@@ -76,25 +61,4 @@ main {
     height: 32rem;
     width: 100%;
     max-width: 1440px;
-}
-
-/* ChangeFlight */
-.btnChange {
-    background-color: #02457A;
-    color: #ffffff;
-
-}
-
-.btnCabinClass,
-.btnFlight {
-    border: none;
-    color: black;
-}
-
-.btnCabinClass:hover,
-.btnFlight:hover,
-.btnChangeFlight {
-    border: none;
-    background: #02457A;
-    color: #ffffff;
 }
