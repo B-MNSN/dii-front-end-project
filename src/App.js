@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 // import Signup from './components/Signup';
 import Container from './components/Container';
 import Flight from './components/Flight';
+import CardSelectFlight from './components/CardsSelectFlight';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Navbar />
       <Container>
           <Flight/>
+          <CardSelectFlight/>
       </Container>
     </>
   );
