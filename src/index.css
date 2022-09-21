@@ -58,9 +58,12 @@ main {
 
 /* For BookingSearch */
 .B-seachButton {
-    background-color: #02457A;
-    size: 5rem;
+    border: none;
+    background: #02457A;
+    width: 80%;
+    height: 55%;
 }
+
 
 .B-inputBox {
     background-color: #ECE8E8;
@@ -75,7 +78,7 @@ main {
 
 .H-seachBox {
     z-index: 1;
-    width: 75%;
+    /* width: 100%; */
     top: 19rem
 }
 
@@ -117,9 +120,14 @@ main {
 
 .btnCabinClass:hover,
 .btnFlight:hover,
-.btnChangeFlight {
+.btnChangeFlight, .btnSelectFlight {
     border: none;
     background: #02457A;
     color: #ffffff;
 }
 
+
+.picFlight {
+    margin-left: 1.5rem;
+    width: 15%;
+}
