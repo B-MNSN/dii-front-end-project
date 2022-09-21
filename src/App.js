@@ -7,14 +7,16 @@ import Navbar from './components/Navbar';
 import Container from './components/Container';
 import Flight from './components/Flight';
 import CardSelectFlight from './components/CardsSelectFlight';
+import Home from './pages/Home';
 
 function App() {
   return (
     <>
       <Navbar />
       <Container>
-          <Flight/>
-          <CardSelectFlight/>
+          {/* <Flight/>
+          <CardSelectFlight/> */}
+          <Home/>
       </Container>
     </>
   );

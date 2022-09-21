@@ -83,6 +83,7 @@ main {
     height: 32rem;
     width: 100%;
     max-width: 1440px;
+}
 .tab-signin, .tab-signup{
     background: none;
     border: none;
@@ -108,9 +109,6 @@ main {
     color: #ffffff;
 }
 
-
-}
-
 .btnCabinClass,
 .btnFlight {
     border: none;
@@ -124,4 +122,4 @@ main {
     background: #02457A;
     color: #ffffff;
 }
-}
+
