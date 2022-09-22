@@ -131,3 +131,10 @@ main {
     margin-left: 1.5rem;
     width: 15%;
 }
+
+/* MyFlightDetails */
+.flightDeparture{
+    width: 50%;
+    height: 25rem;
+
+}
