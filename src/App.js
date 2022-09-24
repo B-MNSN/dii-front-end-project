@@ -8,6 +8,7 @@ import Container from './components/Container';
 // import Flight from './components/Flight';
 // import CardSelectFlight from './components/CardsSelectFlight';
 // import MyFlight from './components/MyFlight';
+// import MyFlightDetails from './components/MyFlightDetails'
 import MyBooking from './components/MyBooking';
 
 function App() {
