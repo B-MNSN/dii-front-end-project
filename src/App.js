@@ -7,16 +7,15 @@ import Navbar from './components/Navbar';
 import Container from './components/Container';
 // import Flight from './components/Flight';
 // import CardSelectFlight from './components/CardsSelectFlight';
-import Home from './pages/Home';
+// import MyFlight from './components/MyFlight';
+import MyBooking from './components/MyBooking';
 
 function App() {
   return (
     <>
       <Navbar />
       <Container>
-          {/* <Flight/>
-          <CardSelectFlight/> */}
-          <Home/>
+          <MyBooking/>
       </Container>
     </>
   );
