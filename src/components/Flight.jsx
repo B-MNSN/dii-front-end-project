@@ -6,27 +6,29 @@ function Flight(){
     const [modalShow, setModalShow] = useState(false);
     return (
         <>
-            <div className="bg-secondary bg-opacity-10 shadow-lg border border-1 mt-5 w-75 d-flex justify-content-between rounded-4">
-                <div className='d-flex align-items-center m-5'>
-                    <div className="departureFlight d-flex">
+        
+            <div className="bg-secondary bg-opacity-10 shadow-lg border border-1 mt-5 w-75 rounded-4">
+                <div className='row m-5 d-flex align-items-center'>
+                    <div className="col departureFlight d-flex">
                         <TbPlaneDeparture size='50' className='me-3' color='#02457A'/>
-                        <div className='mx-3'>
-                            <h3 className='fw-bolder'>เที่ยวบินขาออก</h3>
+                        <div className='col'>
+                            <h5 className='fw-bolder'>เที่ยวบินขาออก</h5>
                             <p>BKKA-CNX | day, date/mm</p>
                         </div>
-                        
-
                     </div>
-                    <div className="arrivalFlight d-flex ms-5">
+                    <div className="col arrivalFlight d-flex ">
                         <TbPlaneArrival size='50' className='me-3' color='#02457A'/>
-                        <div className='mx-3'>
-                            <h3 className='fw-bolder'>เที่ยวบินขาเข้า</h3>
+                        <div className='col'>
+                            <h5 className='fw-bolder'>เที่ยวบินขาเข้า</h5>
                             <p>BKKA-CNX | day, date/mm</p>
                         </div>
                     </div>
-                </div>
-                <div className='d-flex justify-content-end align-items-center me-5'>
-                    <button className='btnChangeFlight shadow-sm rounded-3 fw-bold px-4 py-2' onClick={() => setModalShow(true)}>Change Flight</button>
+                    <div className='col-lg-4'>
+                        <div className='d-flex justify-content-center '>
+                            <button className='btnChangeFlight shadow-sm rounded-3 fw-bold px-4 py-2' onClick={() => setModalShow(true)}>Change Flight</button>
+                        </div>   
+                    </div>
+                    
                 </div>
                 
             </div>
