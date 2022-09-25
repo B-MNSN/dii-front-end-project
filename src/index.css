@@ -126,21 +126,9 @@ main {
     color: #ffffff;
 }
 
-
-.picFlight {
-    margin-left: 1.5rem;
-    width: 15%;
-}
-
-/* MyFlightDetails */
-.flightDeparture{
-    width: 50%;
-    height: 25rem;
-
-}
-
 /* PriceDetail */
-.priceDetails {
-    width: 25rem;
-    height: 27rem;
+.btnbooking {
+    border: none;
+    background: #02457A;
+    color: #ffffff;
 }
