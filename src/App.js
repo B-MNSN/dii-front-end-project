@@ -1,23 +1,18 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import './App.css';
 import './index.css';
-import Navbar from './components/Navbar';
-// import Login from './components/Login';
-// import Signup from './components/Signup';
+// import BookFlight from './pages/BookFlight';
+import Navbar from './components/Navbar.jsx';
 import Container from './components/Container';
-// import Flight from './components/Flight';
-// import CardSelectFlight from './components/CardsSelectFlight';
-import Home from './pages/Home';
+import Flight from './components/Flight';
+import CardSelectFlight from './components/CardsSelectFlight';
+import FlightConfirm from './pages/FlightConfirm';
+
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Container>
-          {/* <Flight/>
-          <CardSelectFlight/> */}
-          <Home/>
-      </Container>
+      <FlightConfirm/>
+        
     </>
   );
 }
