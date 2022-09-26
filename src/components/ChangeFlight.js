@@ -13,7 +13,7 @@ function ChangeFlight(props) {
 
     return (
         <Modal {...props} size="xl" aria-labelledby="contained-modal-title-vcenter" centered>
-            <Modal.Header closeButton className='bg-secondary bg-opacity-10'>
+            <Modal.Header closeButton className='topModal bg-opacity-10 btn-light'>
                 <Modal.Title id="contained-modal-title-vcenter">
                     <h2 className='ms-3 mt-1 mb-0 fw-bold'>เปลี่ยนเที่ยวบิน</h2>
                 </Modal.Title>
@@ -23,17 +23,17 @@ function ChangeFlight(props) {
                     <Container className='px-5 py-3'>
                         <Row className='pb-3'>
                             <Col lg={4}>
-                                <div className='d-flex justify-content-space-around shadow-sm rounded-3 border border-1'>
+                                <div className='d-flex justify-content-space-around shadow-sm rounded-3 border border-1 mt-2'>
                                     <button className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3'>เที่ยวเดียว</button>
                                     <button className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3'>ไป-กลับ</button>
                                 </div>
                             </Col>
                             <Col lg={8}>
-                                <div className=' d-flex justify-content-center shadow-sm rounded-3 border border-1'>
-                                    <button className='btnCabinClass fw-bold rounded-5 px-4 my-2 mx-3'>Economy </button>
-                                    <button className='btnCabinClass fw-bold rounded-5 px-3 my-2 mx-3'>Premium economy</button>
-                                    <button className='btnCabinClass fw-bold rounded-5 px-3 my-2 mx-3'>Business class </button>
-                                    <button className='btnCabinClass fw-bold rounded-5 px-3 my-2 mx-3'>First class</button>
+                                <div className='row d-flex justify-content-center shadow-sm rounded-3 border border-1 m-auto mt-2'>
+                                    <button className='col btnCabinClass fw-bold rounded-5 my-2 ms-3'>Economy </button>
+                                    <button className='col btnCabinClass fw-bold rounded-5 my-2'>Premium</button>
+                                    <button className='col btnCabinClass fw-bold rounded-5 my-2'>Business class </button>
+                                    <button className='col btnCabinClass fw-bold rounded-5 my-2 me-3'>First class</button>
                                 </div>
                             </Col>
                         </Row>
@@ -41,21 +41,19 @@ function ChangeFlight(props) {
                             <Col lg={4}>
                                 <Form.Group>
                                     <Form.Label className='fw-bold'>ต้นทาง</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        autoFocus
-                                        className='shadow-sm rounded'
-                                    />
+                                    <Form.Select>
+                                        <option>เชียงใหม่</option>
+                                        <option>กรุงเทพมหานคร</option>
+                                    </Form.Select>
                                 </Form.Group>
                             </Col>
                             <Col lg={4}>
                                 <Form.Group>
                                     <Form.Label className='fw-bold'>ปลายทาง</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        autoFocus
-                                        className='shadow-sm rounded'
-                                    />
+                                    <Form.Select>
+                                        <option>เชียงใหม่</option>
+                                        <option>กรุงเทพมหานคร</option>
+                                    </Form.Select>
                                 </Form.Group>
                             </Col>
                             <Col lg={4}>
@@ -80,11 +78,11 @@ function ChangeFlight(props) {
                             <Col lg={4}>
                                 <Form.Group>
                                     <Form.Label className='fw-bold'>ผู้โดยสาร</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        autoFocus
-                                        className='shadow-sm rounded'
-                                    />
+                                    <Form.Select>
+                                        <option>ผู้ใหญ่</option>
+                                        <option>เด็ก</option>
+                                        <option>ทารก</option>
+                                    </Form.Select>
                                 </Form.Group>
                             </Col>
                             <Col lg={4} className='d-flex justify-content-end align-items-center'>
