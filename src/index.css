@@ -60,8 +60,8 @@ main {
 .B-seachButton {
     border: none;
     background: #02457A;
-    width: 80%;
-    height: 55%;
+    /* width: 80%; */
+    /* height: 55%; */
 }
 
 
@@ -97,7 +97,7 @@ main {
 }
 
 /* ChangeFlight */
-.btnChange {
+.btnChange, .topModal {
     background-color: #02457A;
     color: #ffffff;
     
