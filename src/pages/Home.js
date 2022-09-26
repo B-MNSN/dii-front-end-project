@@ -1,10 +1,13 @@
 import React from 'react';
 import BookingSearch from '../components/BookingSearch';
 import { Container, Row, Card, Button } from 'react-bootstrap';
+import Navbar from '../components/Navbar';
+
 function Home() {
     const mainPic = require('../Elements/airplane-bg.jpg')
     return (
         <>
+            <Navbar/>
             <Container fluid='lg'>
                 <Row className='mt-3 mx-0 H-seachBoxContainer position-relative'>
                     <div className='H-seachBox d-flex justify-content-center position-absolute'>
