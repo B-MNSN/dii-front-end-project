@@ -1,6 +1,16 @@
+import { useState } from 'react';
 import { Modal, Container, Row, Col, Form } from 'react-bootstrap';
+import DatePicker from 'react-date-picker';
+
+
 
 function ChangeFlight(props) {
+    const [selectDateDepart, setSelectDateDepart] = useState(new Date());
+    const handleDateChangeDepart = (date) => { setSelectDateDepart(date);};
+
+    const [selectDateArrival, setSelectDateArrival] = useState(new Date());
+    const handleDateChangeArrival = (date) => { setSelectDateArrival(date);};
+
     return (
         <Modal {...props} size="xl" aria-labelledby="contained-modal-title-vcenter" centered>
             <Modal.Header closeButton className='bg-secondary bg-opacity-10'>
@@ -51,11 +61,10 @@ function ChangeFlight(props) {
                             <Col lg={4}>
                                 <Form.Group>
                                     <Form.Label className='fw-bold'>วันออกเดินทาง</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        autoFocus
-                                        className='shadow-sm rounded'
-                                    />
+                                    <div>
+                                        <DatePicker dateFormat="dd/MM/yyyy" selected={selectDateDepart} value={selectDateDepart} onChange={handleDateChangeDepart}/>
+                                    </div>
+                                    
                                 </Form.Group>
                             </Col>
                         </Row>
@@ -63,11 +72,9 @@ function ChangeFlight(props) {
                             <Col lg={4}>
                                 <Form.Group>
                                     <Form.Label className='fw-bold'>วันเดินทางกลับ</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        autoFocus
-                                        className='shadow-sm rounded'
-                                    />
+                                    <div>
+                                        <DatePicker dateFormat="dd/MM/yyyy" selected={selectDateArrival} value={selectDateArrival} onChange={handleDateChangeArrival}/>
+                                    </div>
                                 </Form.Group>
                             </Col>
                             <Col lg={4}>
