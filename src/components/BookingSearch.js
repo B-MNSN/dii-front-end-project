@@ -7,20 +7,20 @@ function BookingSearch() {
         <>
             <div className='rounded shadow bg-light d-flex justify-content-center'>
                 <Form>
-                    <Container className=' py-3'>
+                    <Container className='py-3'>
                         <Row className='pb-3 d-flex justify-content-center'>
                             <Col lg={3}>
-                                <div className='d-flex justify-content-space-around shadow-sm rounded-3 border border-1'>
+                                <div className='d-flex justify-content-space-around shadow-sm rounded-3 border border-1 mt-2'>
                                     <button className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3'>เที่ยวเดียว</button>
                                     <button className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3'>ไป-กลับ</button>
                                 </div>
                             </Col>
                             <Col lg={7}>
-                                <div className=' d-flex justify-content-center shadow-sm rounded-3 border border-1'>
-                                    <button className='btnCabinClass fw-bold rounded-5 px-4 my-2 mx-3'>Economy </button>
-                                    <button className='btnCabinClass fw-bold rounded-5 px-3 my-2 mx-3'>Premium economy</button>
-                                    <button className='btnCabinClass fw-bold rounded-5 px-3 my-2 mx-3'>Business class </button>
-                                    <button className='btnCabinClass fw-bold rounded-5 px-3 my-2 mx-3'>First class</button>
+                                <div className='row d-flex justify-content-center shadow-sm rounded-3 border border-1 m-auto mt-2'>
+                                    <button className='col btnCabinClass fw-bold rounded-5 my-2 ms-3'>Economy </button>
+                                    <button className='col btnCabinClass fw-bold rounded-5 my-2'>Premium economy</button>
+                                    <button className='col btnCabinClass fw-bold rounded-5 my-2'>Business class </button>
+                                    <button className='col btnCabinClass fw-bold rounded-5 my-2 me-3'>First class</button>
                                 </div>
                             </Col>
                         </Row>
@@ -75,8 +75,8 @@ function BookingSearch() {
                                     />
                                 </Form.Group>
                             </Col>
-                            <Col lg={1} className='d-flex justify-content-center align-items-end'>
-                                <button href='#' className='B-seachButton shadow-sm rounded-2'><RiSearchLine size={25} color={'#ffffff'} /></button>
+                            <Col lg={1} className='d-flex justify-content-center align-items-end '>
+                                <button href='#' className='B-seachButton shadow-sm rounded-2 px-3 py-1'><RiSearchLine size={30} color={'#ffffff'} /></button>
                             </Col>
                         </Row>
                     </Container>
