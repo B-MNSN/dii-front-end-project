@@ -1,14 +1,22 @@
 import React from 'react';
 import BookingSearch from '../components/BookingSearch';
 import { Container, Row, Card, Button } from 'react-bootstrap';
+import axios from 'axios';
 function Home() {
     const mainPic = require('../Elements/airplane-bg.jpg')
+    async function getProducts() {
+        const products = await axios.get(
+            'http://localhost:8000/flights'
+        );
+        console.log(products);
+    }
+    getProducts();
     return (
         <>
             <Container fluid='lg'>
                 <Row className='mt-3 mx-0 H-seachBoxContainer position-relative'>
                     <div className='H-seachBox d-flex justify-content-center position-absolute'>
-                        <BookingSearch/>
+                        <BookingSearch />
                     </div>
                     <img src={mainPic} className='H-mainPic rounded p-0 shadow' alt='...' />
                 </Row>

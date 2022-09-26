@@ -6,13 +6,15 @@ import Container from './components/Container';
 import Flight from './components/Flight';
 import CardSelectFlight from './components/CardsSelectFlight';
 import FlightConfirm from './pages/FlightConfirm';
+import Home from './pages/Home'
 
 
 function App() {
   return (
     <>
-      <FlightConfirm/>
-        
+      <Navbar />
+      <Home />
+
     </>
   );
 }
