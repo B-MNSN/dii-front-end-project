@@ -14,8 +14,8 @@ function BasicExample() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link className='text-light fw-bold' href="#">Book Flight</Nav.Link>
-            <Nav.Link className='text-light fw-bold' href="#">My Booking</Nav.Link>
+            <Nav.Link className='text-light fw-bold' href="/home">Home</Nav.Link>
+            <Nav.Link className='text-light fw-bold' href="/booking">My Booking</Nav.Link>
             <Nav.Link className='text-light fw-bold' href="#">Help</Nav.Link>
             <NavDropdown className='' align="end" id="basic-nav-dropdown" title=<FaUserAlt size={'25'} color={'#ffffff'} />>
               <NavDropdown.Item href='#'>Signin</NavDropdown.Item>
