@@ -1,26 +1,73 @@
 import React from 'react';
 import { Form, Container, Row, Col} from 'react-bootstrap';
 import { RiSearchLine } from 'react-icons/ri';
+import { useState} from 'react';
+import DatePicker from 'react-date-picker';
+import propTypes from 'prop-types';
 
 function BookingSearch() {
+    const [departDay, setdepartDay] = useState(new Date());
+    const handleDateChangeDepart = (date) => { setdepartDay(date);};
+
+    const [selectDateArrival, setSelectDateArrival] = useState(new Date());
+    const handleDateChangeArrival = (date) => { setSelectDateArrival(date);};
+
+    const option = [
+        {value: 'เชียงใหม่', text: 'เชียงใหม่'},
+        {value: 'กรุงเทพมหานคร', text: 'กรุงเทพมหานคร'}
+    ];
+
+    const [travel, setTravel] = useState(' ');
+    const [departLocate, setDepartLocate] = useState(option[0].value);
+    const [landLocate,setLeadLocate] = useState(' ');
+    const [isActive, setIsActive] = useState(false);
+
+    const handChange = (fn) => {
+        return (event) => {
+            fn(event.target.value);
+        };
+    }
+
+    const onSearch = (event) => {
+        event.preventDefault();
+        console.log(departLocate,landLocate, departDay,selectDateArrival, travel)
+        
+    };
+    const travelChange = event => {
+        setTravel('เที่ยวเดียว')
+        if(travel === 'เที่ยวเดียว'){
+            setTravel('ไป-กลับ')
+        }
+        else{
+            setTravel('เที่ยวเดียว')
+        }
+        setIsActive(event.true)
+        console.log(travel)
+        
+    }
+
     return (
         <>
             <div className='rounded shadow bg-light d-flex justify-content-center'>
-                <Form>
+                <Form onSubmit={onSearch}>
                     <Container className='py-3'>
                         <Row className='pb-3 d-flex justify-content-center'>
                             <Col lg={3}>
                                 <div className='d-flex justify-content-space-around shadow-sm rounded-3 border border-1 mt-2'>
-                                    <button className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3'>เที่ยวเดียว</button>
-                                    <button className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3'>ไป-กลับ</button>
+                                    <div className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center ' style={{backgroundColor: isActive ? '#02457A' : '', color: isActive ? 'white' : ''}} values={travel} onClick={travelChange}  >
+                                        เที่ยวเดียว
+                                    </div>
+                                    <div className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center' values={travel} onClick={travelChange}  >
+                                        ไป-กลับ
+                                    </div>
                                 </div>
                             </Col>
-                            <Col lg={7}>
+                            <Col lg={8}>
                                 <div className='row d-flex justify-content-center shadow-sm rounded-3 border border-1 m-auto mt-2'>
-                                    <button className='col btnCabinClass fw-bold rounded-5 my-2 ms-3'>Economy </button>
-                                    <button className='col btnCabinClass fw-bold rounded-5 my-2'>Premium economy</button>
-                                    <button className='col btnCabinClass fw-bold rounded-5 my-2'>Business class </button>
-                                    <button className='col btnCabinClass fw-bold rounded-5 my-2 me-3'>First class</button>
+                                    <div id='planeClass' className='col btnCabinClass fw-bold rounded-5 my-2 ms-3 d-flex justify-content-center'>Economy </div>
+                                    <div className='col btnCabinClass fw-bold rounded-5 my-2 d-flex justify-content-center'>Premium economy</div>
+                                    <div className='col btnCabinClass fw-bold rounded-5 my-2 d-flex justify-content-center'>Business class </div>
+                                    <div className='col btnCabinClass fw-bold rounded-5 my-2 me-3 d-flex justify-content-center'>First class</div>
                                 </div>
                             </Col>
                         </Row>
@@ -28,55 +75,48 @@ function BookingSearch() {
                             <Col lg={2}>
                                 <Form.Group>
                                     <Form.Label className='fw-bold'>ต้นทาง</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        autoFocus
-                                        className='shadow-sm rounded B-inputBox'
-                                    />
+                                    <Form.Select value={departLocate} onChange={handChange(setDepartLocate)}>
+                                        {option.map(option => (
+                                            <option key={option.value} value={option.value}>{option.text}</option>
+                                        ))}
+                                        {/* <option id='departLocate' name='departLocate' onChange={createSetState(setDepartLocate)} value={option.values}>กรุงเทพมหานคร</option> */}
+                                    </Form.Select>
                                 </Form.Group>
                             </Col>
                             <Col lg={2}>
                                 <Form.Group>
                                     <Form.Label className='fw-bold'>ปลายทาง</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        autoFocus
-                                        className='shadow-sm rounded B-inputBox'
-                                    />
+                                    <Form.Select value={landLocate} onChange={handChange(setLeadLocate)}>
+                                        {option.map(option => (
+                                            <option key={option.value} value={option.value}>{option.text}</option>
+                                        ))}
+                                    </Form.Select>
                                 </Form.Group>
                             </Col>
                             <Col lg={2}>
                                 <Form.Group>
                                     <Form.Label className='fw-bold'>วันออกเดินทาง</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        autoFocus
-                                        className='shadow-sm rounded B-inputBox'
-                                    />
+                                    <DatePicker dateFormat="dd/MM/yyyy" id='departTime' name='departTime' selected={departDay} value={departDay} onChange={handleDateChangeDepart}/>
                                 </Form.Group>
                             </Col>
                             <Col lg={2}>
                                 <Form.Group>
                                     <Form.Label className='fw-bold'>วันเดินทางกลับ</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        autoFocus
-                                        className='shadow-sm rounded B-inputBox'
-                                    />
+                                    <DatePicker dateFormat="dd/MM/yyyy" id='landTime' name='landTime' selected={selectDateArrival} value={selectDateArrival} onChange={handleDateChangeArrival}/>
                                 </Form.Group>
                             </Col>
                             <Col lg={2}>
                                 <Form.Group>
                                     <Form.Label className='fw-bold'>ผู้โดยสาร</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        autoFocus
-                                        className='shadow-sm rounded B-inputBox'
-                                    />
+                                    <Form.Select>
+                                        <option>ผู้ใหญ่</option>
+                                        <option>เด็ก</option>
+                                        <option>ทารก</option>
+                                    </Form.Select>
                                 </Form.Group>
                             </Col>
                             <Col lg={1} className='d-flex justify-content-center align-items-end '>
-                                <button href='#' className='B-seachButton shadow-sm rounded-2 px-3 py-1'><RiSearchLine size={30} color={'#ffffff'} /></button>
+                                <button href='/bookFlight' className='B-seachButton shadow-sm rounded-2 px-3 py-1'><RiSearchLine size={30} color={'#ffffff'} /></button>
                             </Col>
                         </Row>
                     </Container>
@@ -85,5 +125,10 @@ function BookingSearch() {
         </>
     );
 }
+
+BookingSearch.propTypes = {
+    item: propTypes.object.isRequired
+};
+
 
 export default BookingSearch;
