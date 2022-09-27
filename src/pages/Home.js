@@ -1,7 +1,9 @@
 import React from 'react';
 import BookingSearch from '../components/BookingSearch';
-import { Container, Row, Card, Button } from 'react-bootstrap';
+import { Container, Row, Card, Button} from 'react-bootstrap';
+import Navbar from '../components/Navbar';
 import axios from 'axios';
+
 function Home() {
     const mainPic = require('../Elements/airplane-bg.jpg')
     async function getProducts() {
@@ -13,6 +15,7 @@ function Home() {
     getProducts();
     return (
         <>
+            <Navbar/>
             <Container fluid='lg'>
                 <Row className='mt-3 mx-0 H-seachBoxContainer position-relative'>
                     <div className='H-seachBox d-flex justify-content-center position-absolute'>
@@ -74,4 +77,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Home;
