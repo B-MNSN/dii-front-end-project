@@ -10,6 +10,7 @@ import axios from 'axios';
 
 function FlightConfirm() {
     const [books, setBooks] = useState({});
+    // const [airports, setAirports] = useState({});
 
     useEffect(() => {
         async function getBooks() {
@@ -18,6 +19,11 @@ function FlightConfirm() {
             ).then(res => {
                 setBooks(res.data);
             });
+            // await axios.get(
+            //     'http://localhost:8000/airports'
+            // ).then(res => {
+            //     setAirports(res.data);
+            // });
         }
         getBooks();
     }, []);
@@ -25,14 +31,14 @@ function FlightConfirm() {
         <>
             <Navbar />
             <Container>
-                <MyFlight item={books} />
+                <MyFlight books={books} />
                 <div className='d-flex justify-content-center w-75'>
                     <div className='row '>
                         <div className='col-lg-8'>
-                            <MyFlightDetails />
+                            <MyFlightDetails books={books} />
                         </div>
                         <div className='col'>
-                            <PriceDetails />
+                            <PriceDetails books={books} />
                         </div>
                     </div>
                 </div>
