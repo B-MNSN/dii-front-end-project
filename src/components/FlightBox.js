@@ -3,12 +3,9 @@ import PropTypes from 'prop-types';
 import { FaArrowRight } from 'react-icons/fa';
 import { RiLuggageDepositLine } from 'react-icons/ri';
 
-function Flightbox({ item }) {
+function Flightbox(item) {
     return (
         <>
-
-
-
             <div className="bg-secondary bg-opacity-10 shadow-lg border border-1 mt-5 w-75 rounded-4">
                 <div className='row d-flex align-items-center justify-content-center m-4'>
                     <div className='col-md-2 d-flex justify-content-center'>
