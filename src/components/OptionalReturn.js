@@ -1,5 +1,5 @@
 function OptionalReturn({ books }) {
-    if (books.return) {
+    if (books.return?.price) {
         return (<div className="col-11 mx-4 mt-3">
             <div className="col d-flex justify-content-between">
                 <h6 className="fw-bold my-1">เที่ยวบินขากลับ</h6>

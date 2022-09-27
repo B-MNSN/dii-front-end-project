@@ -1,8 +1,7 @@
 import { TbPlaneDeparture } from 'react-icons/tb';
-import { TbPlaneArrival } from 'react-icons/tb';
 import { BsArrowRightShort } from 'react-icons/bs';
 import PropTypes from 'prop-types';
-
+import OptionalMyFlight from './OptionalMyFlight';
 function MyFLight({ books }) {
     return (
         <>
@@ -15,13 +14,7 @@ function MyFLight({ books }) {
                             <p>{`${books.depart?.departLocate} ${books.depart?.departCode}`}<BsArrowRightShort /> {`${books.depart?.landLocate} ${books.depart?.landCode} | ${books.depart?.departDay} | ผู้ใหญ่ ${books.traveler} | ${books.depart?.planeClass}`}</p>
                         </div>
                     </div>
-                    <div className="arrivalFlight col d-flex">
-                        <TbPlaneArrival size='40' className='me-3' color='#02457A' />
-                        <div className='col-md'>
-                            <h5 className='fw-bolder'>{books.return?.departLocate} <BsArrowRightShort /> {books.return?.landLocate}</h5>
-                            <p>{`${books.return?.departLocate} ${books.return?.departCode}`} <BsArrowRightShort /> {`${books.return?.landLocate} ${books.return?.landCode} | ${books.return?.departDay} | ผู้ใหญ่ ${books.traveler} | ${books.return?.planeClass}`}</p>
-                        </div>
-                    </div>
+                    <OptionalMyFlight books={books} />
                 </div>
             </div>
         </>

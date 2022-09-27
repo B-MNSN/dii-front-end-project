@@ -15,7 +15,7 @@ function FlightConfirm() {
     useEffect(() => {
         async function getBooks() {
             await axios.get(
-                'http://localhost:8000/books/U0001'
+                'http://localhost:8000/books/U0002'
             ).then(res => {
                 setBooks(res.data);
             });
