@@ -13,7 +13,7 @@ import BookFlight from './pages/BookFlight';
 function App() {
   return (
     <>
-      <BookFlight />
+      <FlightConfirm />
     </>
   );
 }

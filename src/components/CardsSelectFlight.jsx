@@ -14,6 +14,7 @@ function CardSelectFlight() {
         }
         getFlights();
     }, []);
+    console.log(flights)
     return (
         <>{flights.map((flight) => (
             <Flightbox key={flight.id} item={flight} />
