@@ -46,14 +46,9 @@ main {
     width: 15%;
 }
 
-.buttonLogin, .buttonSignup {
+.buttonLogin, .buttonSignup, .bg-blue, .bgInform  {
     background-color: #02457A;
 
-}
-
-/* For bg Main theme color */
-.bg-blue {
-    background-color: #02457A;
 }
 
 /* For BookingSearch */
@@ -63,7 +58,6 @@ main {
     /* width: 80%; */
     /* height: 55%; */
 }
-
 
 .B-inputBox {
     background-color: #ECE8E8;
@@ -120,14 +114,7 @@ main {
 
 .btnCabinClass:hover,
 .btnFlight:hover,
-.btnChangeFlight, .btnSelectFlight {
-    border: none;
-    background: #02457A;
-    color: #ffffff;
-}
-
-/* PriceDetail */
-.btnbooking {
+.btnChangeFlight, .btnSelectFlight, .btnConfirm, .btnbooking {
     border: none;
     background: #02457A;
     color: #ffffff;
