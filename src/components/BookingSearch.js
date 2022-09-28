@@ -4,6 +4,7 @@ import { RiSearchLine } from 'react-icons/ri';
 import { useState } from 'react';
 import DatePicker from 'react-date-picker';
 import propTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function BookingSearch() {
     const [departDay, setdepartDay] = useState(new Date());
@@ -19,7 +20,7 @@ function BookingSearch() {
 
     const [travel, setTravel] = useState(' ');
     const [departLocate, setDepartLocate] = useState(option[0].value);
-    const [landLocate, setLeadLocate] = useState(' ');
+    const [landLocate, setLeadLocate] = useState(option[1].value);
     const [isActive, setIsActive] = useState(false);
 
     const handChange = (fn) => {
@@ -37,12 +38,13 @@ function BookingSearch() {
         // setTravel('เที่ยวเดียว')
         let flightOptionValue;
         flightOptionValue = (event?.target.innerText);
+
         setTravel(flightOptionValue);
         setIsActive(event.true)
 
 
     }
-    console.log(travel)
+
     return (
         <>
             <div className='rounded shadow bg-light d-flex justify-content-center'>
@@ -113,7 +115,8 @@ function BookingSearch() {
                                 </Form.Group>
                             </Col>
                             <Col lg={1} className='d-flex justify-content-center align-items-end '>
-                                <button href='/bookFlight' className='B-seachButton shadow-sm rounded-2 px-3 py-1'><RiSearchLine size={30} color={'#ffffff'} /></button>
+                                <Link to={`/bookFlight?departLocate=${departLocate}&landLocate=${landLocate}`}><button className='B-seachButton shadow-sm rounded-2 px-3 py-1'><RiSearchLine size={30} color={'#ffffff'} /></button></Link>
+
                             </Col>
                         </Row>
                     </Container>

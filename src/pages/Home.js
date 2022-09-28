@@ -6,13 +6,13 @@ import axios from 'axios';
 
 function Home() {
     const mainPic = require('../Elements/airplane-bg.jpg')
-    async function getProducts() {
-        const products = await axios.get(
-            'http://localhost:8000/flights'
-        );
-        console.log(products);
-    }
-    getProducts();
+    // async function getProducts() {
+    //     const products = await axios.get(
+    //         'http://localhost:8000/flights'
+    //     );
+    //     console.log(products);
+    // }
+    // getProducts();
     return (
         <>
             <Navbar />
