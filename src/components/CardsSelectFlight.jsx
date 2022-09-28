@@ -8,7 +8,7 @@ function CardSelectFlight() {
     useEffect(() => {
         async function getFlights() {
             const flights = await axios.get(
-                'http://localhost:8000/flights'
+                `http://localhost:8000/flights${window.location.search}`
             );
             setFlights(flights.data);
         }
@@ -17,7 +17,7 @@ function CardSelectFlight() {
     console.log(flights)
     return (
         <>{flights.map((flight) => (
-            <Flightbox key={flight.id} item={flight} />
+            <Flightbox key={flight.id} flight={flight} />
         ))}
         </>
     )

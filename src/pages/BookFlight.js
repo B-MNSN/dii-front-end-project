@@ -8,11 +8,11 @@ import CardSelectFlight from '../components/CardsSelectFlight';
 function BookFlight() {
   return (
     <>
-        <Navbar/>
-        <Container>
-            <Flight/>
-            <CardSelectFlight/>
-        </Container>
+      <Navbar />
+      <Container>
+        <Flight />
+        <CardSelectFlight />
+      </Container>
     </>
   )
 }
