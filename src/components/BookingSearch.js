@@ -1,25 +1,25 @@
 import React from 'react';
-import { Form, Container, Row, Col} from 'react-bootstrap';
+import { Form, Container, Row, Col } from 'react-bootstrap';
 import { RiSearchLine } from 'react-icons/ri';
-import { useState} from 'react';
+import { useState } from 'react';
 import DatePicker from 'react-date-picker';
 import propTypes from 'prop-types';
 
 function BookingSearch() {
     const [departDay, setdepartDay] = useState(new Date());
-    const handleDateChangeDepart = (date) => { setdepartDay(date);};
+    const handleDateChangeDepart = (date) => { setdepartDay(date); };
 
     const [selectDateArrival, setSelectDateArrival] = useState(new Date());
-    const handleDateChangeArrival = (date) => { setSelectDateArrival(date);};
+    const handleDateChangeArrival = (date) => { setSelectDateArrival(date); };
 
     const option = [
-        {value: 'เชียงใหม่', text: 'เชียงใหม่'},
-        {value: 'กรุงเทพมหานคร', text: 'กรุงเทพมหานคร'}
+        { value: 'เชียงใหม่', text: 'เชียงใหม่' },
+        { value: 'กรุงเทพมหานคร', text: 'กรุงเทพมหานคร' }
     ];
 
     const [travel, setTravel] = useState(' ');
     const [departLocate, setDepartLocate] = useState(option[0].value);
-    const [landLocate,setLeadLocate] = useState(' ');
+    const [landLocate, setLeadLocate] = useState(' ');
     const [isActive, setIsActive] = useState(false);
 
     const handChange = (fn) => {
@@ -30,22 +30,19 @@ function BookingSearch() {
 
     const onSearch = (event) => {
         event.preventDefault();
-        console.log(departLocate,landLocate, departDay,selectDateArrival, travel)
-        
+        console.log(departLocate, landLocate, departDay, selectDateArrival, travel)
+
     };
     const travelChange = event => {
-        setTravel('เที่ยวเดียว')
-        if(travel === 'เที่ยวเดียว'){
-            setTravel('ไป-กลับ')
-        }
-        else{
-            setTravel('เที่ยวเดียว')
-        }
+        // setTravel('เที่ยวเดียว')
+        let flightOptionValue;
+        flightOptionValue = (event?.target.innerText);
+        setTravel(flightOptionValue);
         setIsActive(event.true)
-        console.log(travel)
-        
-    }
 
+
+    }
+    console.log(travel)
     return (
         <>
             <div className='rounded shadow bg-light d-flex justify-content-center'>
@@ -53,11 +50,11 @@ function BookingSearch() {
                     <Container className='py-3'>
                         <Row className='pb-3 d-flex justify-content-center'>
                             <Col lg={3}>
-                                <div className='d-flex justify-content-space-around shadow-sm rounded-3 border border-1 mt-2'>
-                                    <div className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center ' style={{backgroundColor: isActive ? '#02457A' : '', color: isActive ? 'white' : ''}} values={travel} onClick={travelChange}  >
+                                <div id='GG' className='d-flex justify-content-space-around shadow-sm rounded-3 border border-1 mt-2'>
+                                    <div className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center ' style={{ backgroundColor: isActive ? '#02457A' : '', color: isActive ? 'white' : '' }} values={'เที่ยวเดียว'} onClick={travelChange}  >
                                         เที่ยวเดียว
                                     </div>
-                                    <div className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center' values={travel} onClick={travelChange}  >
+                                    <div className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center' values={'ไป-กลับ'} onClick={travelChange}  >
                                         ไป-กลับ
                                     </div>
                                 </div>
@@ -96,13 +93,13 @@ function BookingSearch() {
                             <Col lg={2}>
                                 <Form.Group>
                                     <Form.Label className='fw-bold'>วันออกเดินทาง</Form.Label>
-                                    <DatePicker dateFormat="dd/MM/yyyy" id='departTime' name='departTime' selected={departDay} value={departDay} onChange={handleDateChangeDepart}/>
+                                    <DatePicker dateFormat="dd/MM/yyyy" id='departTime' name='departTime' selected={departDay} value={departDay} onChange={handleDateChangeDepart} />
                                 </Form.Group>
                             </Col>
                             <Col lg={2}>
                                 <Form.Group>
                                     <Form.Label className='fw-bold'>วันเดินทางกลับ</Form.Label>
-                                    <DatePicker dateFormat="dd/MM/yyyy" id='landTime' name='landTime' selected={selectDateArrival} value={selectDateArrival} onChange={handleDateChangeArrival}/>
+                                    <DatePicker dateFormat="dd/MM/yyyy" id='landTime' name='landTime' selected={selectDateArrival} value={selectDateArrival} onChange={handleDateChangeArrival} />
                                 </Form.Group>
                             </Col>
                             <Col lg={2}>
