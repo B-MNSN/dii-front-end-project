@@ -1,8 +1,35 @@
 import Navbar from './Navbar';
 import Container from './Container';
 import {Form} from 'react-bootstrap';
+import { useState } from 'react';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
-function UserInformation() {
+function UserInformation({addInform}) {
+    const optionPrefix = [
+        {value: 'นางสาว', text: 'นางสาว'},
+        {value: 'นาง', text: 'นาง'},
+        {value: 'นาย', text: 'นาย'},
+        {value: 'ด.ญ', text: 'ด.ญ'},
+        {value: 'ด.ช', text: 'ด.ช'},
+    ];
+
+    const [prefix, setPrefix] = useState(optionPrefix[0].value);
+    const [fname, setFname] = useState(' ');
+    const [lname, setLname] = useState(' ');
+    const [phoneNumber, setPhoneNumber] = useState(' ');
+    const [email, setEmail] = useState(' ');
+
+    const handChange =(fn) => {
+        return (event) => {
+            fn(event.target.value);
+        };
+    };
+    const onSubmit = (event) => {
+        event.preventDefault();
+        addInform({fname, lname, phoneNumber, email});
+    };
+
+    
     return(
         <>
             <Navbar/>
@@ -13,43 +40,40 @@ function UserInformation() {
                             <h4 className='fw-bold text-white m-0'>ข้อมูลติดต่อ</h4>
                         </div>
                     </div>
-                    <Form>
+                    <Form onSubmit={onSubmit}>
                         <div className='row m-5'>
                             <div className='col-md-12'>
                                 <Form.Group className="mb-3 col-md-3">
                                     <Form.Label className='fw-bold'>คำนำหน้าชื่อ</Form.Label>
-                                    <Form.Select aria-label="Default select example">
-                                        <option>คำนำหน้า</option>
-                                        <option value="1">นางสาว</option>
-                                        <option value="2">นาง</option>
-                                        <option value="3">นาย</option>
-                                        <option value="3">ด.ญ</option>
-                                        <option value="3">ด.ช</option>
+                                    <Form.Select placeholder="คำนำหน้า" value={prefix} onChange={handChange(setPrefix)}>
+                                        {optionPrefix.map(optionPrefix => (
+                                            <option key={optionPrefix.value} value={optionPrefix.value}>{optionPrefix.text}</option> 
+                                        ))}
                                     </Form.Select>
                                 </Form.Group>
                             </div>
                             <div className='col-md-6'>
                                 <Form.Group className="mb-3">
                                     <Form.Label className='fw-bold'>ชื่อ</Form.Label>
-                                    <Form.Control type="text" placeholder="ชื่อ" />
+                                    <Form.Control type="text" placeholder="ชื่อ" name='fname' id='fname' onChange={handChange(setFname)} />
                                 </Form.Group>
                             </div>
                             <div className='col-md-6'>
                                 <Form.Group className="mb-3" >
                                     <Form.Label className='fw-bold'>นามสกุล</Form.Label>
-                                    <Form.Control type="text" placeholder="นามสกุล" />
+                                    <Form.Control type="text" placeholder="นามสกุล" name='lname' id='lname' onChange={handChange(setLname)}/>
                                 </Form.Group>
                             </div>
                             <div className='col-md-6'>
                                 <Form.Group className="mb-3">
                                     <Form.Label className='fw-bold'>เบอร์มือถือ</Form.Label>
-                                    <Form.Control type="text" placeholder="เบอร์มือถือ" />
+                                    <Form.Control type="text" placeholder="เบอร์มือถือ" name='phoneNumbe' id='phoneNumbe' onChange={handChange(setPhoneNumber)} />
                                 </Form.Group>
                             </div>
                             <div className='col-md-6'>
                                 <Form.Group className="mb-3">
                                     <Form.Label className='fw-bold'>Email address</Form.Label>
-                                    <Form.Control type="email" placeholder="Enter email" />
+                                    <Form.Control type="email" placeholder="Enter email" name='email' id='email' onChange={handChange(setEmail)}/>
                                     <Form.Text className="text-muted">
                                     We'll never share your email with anyone else.
                                     </Form.Text>
@@ -64,6 +88,15 @@ function UserInformation() {
             </Container>
         </>
     )
+}
+
+UserInformation.prototype = {
+    addInform : propTypes.shape({
+        fname: propTypes.string.isRequired,
+        lname: propTypes.string.isRequired,
+        phoneNumber: propTypes.string.isRequired,
+        email: propTypes.string.isRequired
+    })
 }
 
 export default UserInformation;
