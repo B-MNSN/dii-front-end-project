@@ -1,6 +1,7 @@
 import React from "react";
+import { CardImg } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-
+import background from "../bgAirplane.jpg"
 const MyBooking = () => {
   return (
     <>
@@ -21,15 +22,15 @@ const MyBooking = () => {
             </div>
           </div>
         </Card.Header>
-        <Card.Body>
-          <Card.Title>
+        <Card.Body class="img-bg" >
+          <Card.Title class="">
             <strong>ข้อมูลผู้โดยสาร</strong>{" "}
           </Card.Title>
           <Card.Text>
             <p class="mb-3" style={{ color: "black" }}>
               <strong>Mrs Elsa Frozen</strong>{" "}
             </p>
-            <footer class="blockquote-footer" style={{ color: "gray" }}>
+            <footer class="blockquote-footer" style={{ color: "#5F6F94" }}>
               Ticket Number : 1234566789
             </footer>
           </Card.Text>
@@ -39,10 +40,10 @@ const MyBooking = () => {
             </h5>
           </Card.Title>
           <Card.Text>
-            <div class="container-footer">
+            <div class="container-footer" >
               <div class="row align-items-end">
                 <div class="col order-first">
-                  <p class="mb-3" style={{ color: "gray" }}>
+                  <p class="mb-3" style={{ color: "#5F6F94" }}>
                     <small>ชื่อ-นามสกุล</small>{" "}
                     </p>
                   <footer class="blockquote-footer" style={{ color: "black" }}>
@@ -50,7 +51,7 @@ const MyBooking = () => {
                   </footer>
                 </div>
                 <div class="col">
-                  <p class="mb-3" style={{ color: "gray" }}>
+                  <p class="mb-3" style={{ color: "#5F6F94" }}>
                     <small>อีเมล</small>{" "}
                   </p>
                   <footer class="blockquote-footer" style={{ color: "black" }}>
@@ -58,7 +59,7 @@ const MyBooking = () => {
                   </footer>
                 </div>
                 <div class="col order-last">
-                  <p class="mb-3" style={{ color: "gray" }}>
+                  <p class="mb-3" style={{ color: "#5F6F94" }}>
                     <small>เบอร์โทรศัพท์</small>
                   </p>
                   <footer class="blockquote-footer" style={{ color: "black" }}>
