@@ -5,7 +5,7 @@ import background from "../bgAirplane.jpg"
 const MyBooking = () => {
   return (
     <>
-      <Card style={{ width: "75%",marginTop: "5%" }}>
+      <Card style={{ width: "75%",marginTop: "5%",boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",transition: "0.3s" }}>
         <Card.Header style={{ backgroundColor: "#02457A",}}>
           <div class="container-head">
             <div class="row align-items-start">
