@@ -22,7 +22,7 @@ const MyBooking = () => {
             </div>
           </div>
         </Card.Header>
-        <Card.Body class="img-bg" >
+        <Card.Body class="img-fluid" >
           <Card.Title class="">
             <strong>ข้อมูลผู้โดยสาร</strong>{" "}
           </Card.Title>

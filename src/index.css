@@ -146,9 +146,16 @@ main {
 }
 
 /* MyBooking */
-.img-bg {
+.img-fluid {
     padding: 20px;
     background-image: url("./bgAirplane.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100%;  
 }
+
+@media screen and (max-width: 865px) {
+    .img-fluid {
+      background-image: url("./bgResponsive.jpg");
+    }
+  }
+
