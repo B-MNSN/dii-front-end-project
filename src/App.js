@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
+import AddDataUser from './components/AddDataUser';
 // import ChangeFlight from './components/ChangeFlight';
 // import MyBooking from './components/MyBooking';
 import UserInformation from './components/UserInformation';
@@ -13,7 +14,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<AddDataUser/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/bookFlight' element={<BookFlight/>}/>
         <Route path='/userInfoemation' elament={<UserInformation/>}/>

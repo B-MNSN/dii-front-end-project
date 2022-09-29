@@ -10,10 +10,11 @@ function UserInformation(){
     function addInform(data) {
         const newDataUser = {id: ++currentUserId, ...data};
         setDataUser([...dataUser, newDataUser]);
+        console.log([...dataUser, newDataUser])
     }
     useEffect(() => {
         async function getDataUser(){
-            const userInform = await axios.post('http://localhost:8000/user');
+            const userInform = await axios.get('http://localhost:8000/user');
             setDataUser(userInform.data);
         }
         getDataUser();
@@ -21,7 +22,7 @@ function UserInformation(){
 
     return (
         <>
-            <AddDataUser addInform={addInform}/>
+            {/* <AddDataUser addInform={addInform}/> */}
         </>
     );
 }
