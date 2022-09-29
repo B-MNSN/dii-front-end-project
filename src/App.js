@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
+import MyBooking from './components/MyBooking';
 import UserInformation from './components/UserInformation';
 import './index.css';
 
@@ -11,7 +12,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<UserInformation/>}/>
+        <Route path='/' element={<Home/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/bookFlight' element={<BookFlight/>}/>
 
