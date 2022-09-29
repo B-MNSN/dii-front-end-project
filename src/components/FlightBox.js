@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FaArrowRight } from 'react-icons/fa';
 import { RiLuggageDepositLine } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 function Flightbox({ flight }) {
     console.log(flight);
@@ -36,7 +37,7 @@ function Flightbox({ flight }) {
                         <p>{`฿${flight.price}/คน `}</p>
                     </div>
                     <div className='col-md-3 d-flex justify-content-center'>
-                        <button className='btnSelectFlight shadow-sm rounded-3 fw-bold px-3 py-1'>เลือกเที่ยวบิน</button>
+                        <Link to={`/flightConfirm`}><button className='btnSelectFlight shadow-sm rounded-3 fw-bold px-3 py-1'>เลือกเที่ยวบิน</button></Link>
                     </div>
                 </div>
             </div>
