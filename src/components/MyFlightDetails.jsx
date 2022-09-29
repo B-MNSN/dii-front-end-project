@@ -1,6 +1,6 @@
 import { TbPlaneDeparture } from 'react-icons/tb';
 // import { TbPlaneArrival } from 'react-icons/tb';
-import airAsiaFlight from '../Elements/air-asia.png';
+// import airAsiaFlight from '../Elements/air-asia.png';
 import { BsClock } from 'react-icons/bs';
 import { RiMore2Line } from 'react-icons/ri';
 import OptionalFlightDetails from './OptionalFlightDetails';
