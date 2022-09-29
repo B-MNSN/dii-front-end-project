@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 
 function ChangeFlight(props) {
     const [departDay, setdepartDay] = useState(new Date());
-    const handleDateChangeDepart = (date) => { setdepartDay(date);};
+    const handleDateChangeDepart = (date) => { setdepartDay(date); };
 
     const [selectDateArrival, setSelectDateArrival] = useState(new Date());
-    const handleDateChangeArrival = (date) => { setSelectDateArrival(date);};
+    const handleDateChangeArrival = (date) => { setSelectDateArrival(date); };
 
     const option = [
         { value: 'เชียงใหม่', text: 'เชียงใหม่' },
@@ -47,9 +47,12 @@ function ChangeFlight(props) {
         planeClassValue = (event?.target.innerText);
         setPlaneClass(planeClassValue);
         console.log(planeClass);
-        
-    };
 
+    };
+    const repageSearch = () => {
+        console.dir(window.location);
+        window.location.href = `/bookFlight?departLocate=${departLocate}&landLocate=${landLocate}`;
+    }
     return (
         <Modal {...props} size="xl" aria-labelledby="contained-modal-title-vcenter" centered>
             <Modal.Header closeButton className='topModal bg-opacity-10 btn-light'>
@@ -64,16 +67,16 @@ function ChangeFlight(props) {
                             <Col lg={4}>
                                 <div className='d-flex justify-content-space-around shadow-sm rounded-3 border border-1 mt-2'>
                                     <div className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center ' style={{ backgroundColor: isActive ? '#02457A' : '', color: isActive ? 'white' : '' }} values={'เที่ยวเดียว'} onClick={travelChange}  >
-                                            เที่ยวเดียว
-                                        </div>
-                                        <div className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center' values={'ไป-กลับ'} onClick={travelChange}  >
-                                            ไป-กลับ
-                                        </div>
+                                        เที่ยวเดียว
                                     </div>
+                                    <div className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center' values={'ไป-กลับ'} onClick={travelChange}  >
+                                        ไป-กลับ
+                                    </div>
+                                </div>
                             </Col>
                             <Col lg={8}>
                                 <div className='row d-flex justify-content-center shadow-sm rounded-3 border border-1 m-auto mt-2'>
-                                <div id='planeClass' className='col btnCabinClass fw-bold rounded-5 my-2 ms-3 d-flex justify-content-center' value={'Economy'} onClick={planeClassChange}>Economy </div>
+                                    <div id='planeClass' className='col btnCabinClass fw-bold rounded-5 my-2 ms-3 d-flex justify-content-center' value={'Economy'} onClick={planeClassChange}>Economy </div>
                                     <div className='col btnCabinClass fw-bold rounded-5 my-2 d-flex justify-content-center' value={'Premium economy'} onClick={planeClassChange}>Premium economy</div>
                                     <div className='col btnCabinClass fw-bold rounded-5 my-2 d-flex justify-content-center' value={'Business class'} onClick={planeClassChange}>Business class </div>
                                     <div className='col btnCabinClass fw-bold rounded-5 my-2 me-3 d-flex justify-content-center' value={'First class'} onClick={planeClassChange}>First class</div>
@@ -105,9 +108,9 @@ function ChangeFlight(props) {
                                 <Form.Group>
                                     <Form.Label className='fw-bold'>วันออกเดินทาง</Form.Label>
                                     <div>
-                                        <DatePicker dateFormat="dd/MM/yyyy" selected={departDay} value={departDay} onChange={handleDateChangeDepart}/>
+                                        <DatePicker dateFormat="dd/MM/yyyy" selected={departDay} value={departDay} onChange={handleDateChangeDepart} />
                                     </div>
-                                    
+
                                 </Form.Group>
                             </Col>
                         </Row>
@@ -116,7 +119,7 @@ function ChangeFlight(props) {
                                 <Form.Group>
                                     <Form.Label className='fw-bold'>วันเดินทางกลับ</Form.Label>
                                     <div>
-                                        <DatePicker dateFormat="dd/MM/yyyy" selected={selectDateArrival} value={selectDateArrival} onChange={handleDateChangeArrival}/>
+                                        <DatePicker dateFormat="dd/MM/yyyy" selected={selectDateArrival} value={selectDateArrival} onChange={handleDateChangeArrival} />
                                     </div>
                                 </Form.Group>
                             </Col>
@@ -131,10 +134,14 @@ function ChangeFlight(props) {
                                 </Form.Group>
                             </Col>
                             <Col lg={4} className='d-flex justify-content-end align-items-center'>
-                                <Form.Group >
-                                    <Form.Label></Form.Label>
-                                    <Link to={`/bookFlight?travel=${travel}&departLocate=${departLocate}&landLocate=${landLocate}&planeClass=${planeClass}`}><button className='btnChange shadow-sm rounded-3 fw-bold px-5 py-1'>Change</button></Link>
-                                </Form.Group>
+
+                                <Link to={`/bookFlight?departLocate=${departLocate}&landLocate=${landLocate}`}>
+                                    <button onClick={repageSearch} className='btnChange shadow-sm rounded-3 fw-bold px-5 py-1'>Change</button>
+                                </Link>
+
+                                {/* temp 
+                                travel=${travel}&planeClass=${planeClass}
+                                 */}
                             </Col>
                         </Row>
                     </Container>

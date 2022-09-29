@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom';
 
 function BookingSearch() {
     const [departDay, setdepartDay] = useState(new Date());
-    const handleDateChangeDepart = (date) => { 
-        setdepartDay(date); 
+    const handleDateChangeDepart = (date) => {
+        setdepartDay(date);
         console.log(departDay);
     };
 
@@ -24,7 +24,7 @@ function BookingSearch() {
     const [travel, setTravel] = useState(' ');
     const [departLocate, setDepartLocate] = useState(option[0].value);
     const [landLocate, setLeadLocate] = useState(option[1].value);
-    const [isActive, setIsActive] = useState([true,true]);
+    const [isActive, setIsActive] = useState([true, true]);
     const [planeClass, setPlaneClass] = useState(false);
 
     const handChange = (fn) => {
@@ -60,7 +60,7 @@ function BookingSearch() {
         planeClassValue = (event?.target.innerText);
         setPlaneClass(planeClassValue);
         console.log(planeClass);
-        
+
     };
     //  
     console.log(isActive);
@@ -75,7 +75,7 @@ function BookingSearch() {
                                     <div className={`btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center ${!isActive[0] ? 'btnActive' : ''}`} values={'เที่ยวเดียว'} onClick={travelChange}  >
                                         เที่ยวเดียว
                                     </div>
-                                    <div className={`btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center ${!isActive[1] ? 'btnActive' : ''}`}  values={'ไป-กลับ'} onClick={travelChange2}  >
+                                    <div className={`btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center ${!isActive[1] ? 'btnActive' : ''}`} values={'ไป-กลับ'} onClick={travelChange2}  >
                                         ไป-กลับ
                                     </div>
                                 </div>
@@ -133,8 +133,11 @@ function BookingSearch() {
                                 </Form.Group>
                             </Col>
                             <Col lg={1} className='d-flex justify-content-center align-items-end '>
-                                <Link to={`/bookFlight?travel=${travel}&departLocate=${departLocate}&landLocate=${landLocate}&planeClass=${planeClass}`}><button className='B-seachButton shadow-sm rounded-2 px-3 py-1'><RiSearchLine size={30} color={'#ffffff'} /></button></Link>
-
+                                <Link to={`/bookFlight?departLocate=${departLocate}&landLocate=${landLocate}`}><button className='B-seachButton shadow-sm rounded-2 px-3 py-1'><RiSearchLine size={30} color={'#ffffff'} /></button></Link>
+                                {/* temp
+                                            travel=${travel}&
+                                            &planeClass=${planeClass}
+                                             */}
                             </Col>
                         </Row>
                     </Container>
