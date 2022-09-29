@@ -10,7 +10,7 @@ function Flightbox({ flight }) {
             <div className="bg-secondary bg-opacity-10 shadow-lg border border-1 mt-5 w-75 rounded-4">
                 <div className='row d-flex align-items-center justify-content-center m-4'>
                     <div className='col-md-2 d-flex justify-content-center'>
-                        <img src={flight.imgURLlogo} alt='air-asia-flight' className='picFlight img-fluid' width={150} />
+                        <img src={flight.imgURLlogo} alt='air-asia-flight' className='picFlight img-fluid'/>
                     </div>
                     <div className='col-md-3 d-flex align-items-center'>
                         <div className='col'>
