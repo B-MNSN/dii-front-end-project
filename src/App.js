@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
-import MyBooking from './components/MyBooking';
+// import ChangeFlight from './components/ChangeFlight';
+// import MyBooking from './components/MyBooking';
 import UserInformation from './components/UserInformation';
 import './index.css';
 
@@ -15,6 +16,8 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/bookFlight' element={<BookFlight/>}/>
+        <Route path='/userInfoemation' elament={<UserInformation/>}/>
+        {/* <Route path='/changeFlight' element={<ChangeFlight/>}/> */}
 
       </Routes>
     </>

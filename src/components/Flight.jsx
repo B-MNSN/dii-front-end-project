@@ -25,7 +25,7 @@ function Flight(){
                     </div>
                     <div className='col-lg-4'>
                         <div className='d-flex justify-content-center '>
-                            <button className='btnChangeFlight shadow-sm rounded-3 fw-bold px-4 py-2' onClick={() => setModalShow(true)}>Change Flight</button>
+                            <button href='/changeFlight' className='btnChangeFlight shadow-sm rounded-3 fw-bold px-4 py-2' onClick={() => setModalShow(true)}>Change Flight</button>
                         </div>   
                     </div>
                     
