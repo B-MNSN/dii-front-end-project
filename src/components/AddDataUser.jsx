@@ -26,14 +26,18 @@ function AddDataUser({addInform}) {
     };
     const onSubmit = (event) => {
         event.preventDefault();
-        console.log(event.target.fname.value)
         // addInform({fname, lname, phoneNumber, email});
-        // console.log({fname, lname, phoneNumber, email})
+        console.log({fname, lname, phoneNumber, email});
         axios.post('http://localhost:8000/user', {
-            fname: event.target.fname.value
-        })
-       
-
+            fname,
+            lname,
+            phoneNumber,
+            email
+        }).then((response) => {
+            console.log(response);
+        }).catch((error) => {
+            console.log(error);
+        });
     };
 
     
