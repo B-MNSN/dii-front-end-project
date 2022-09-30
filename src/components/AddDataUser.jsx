@@ -40,6 +40,7 @@ function AddDataUser() {
             flightID
         }).then((response) => {
             console.log(response);
+            window.location.href='/myBooking'
         }).catch((error) => {
             console.log(error);
         });
@@ -95,7 +96,7 @@ function AddDataUser() {
                                     </Form.Group>
                                 </div>
                                 <div className='col d-flex justify-content-end'>
-                                    <button type="submit" className='btnConfirm shadow-sm rounded-2 px-3 py-1'>ยืนยันการจอง</button>
+                                    <button type="submit"  className='btnConfirm shadow-sm rounded-2 px-3 py-1'>ยืนยันการจอง</button>
                                 </div>
                             </div>
                         </Form>
