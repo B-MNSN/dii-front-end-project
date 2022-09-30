@@ -43,7 +43,7 @@ function BookBox({ book }) {
                 </div>
             </Container>
             <Ticket show={modalShow} book={book} flight={flights} onHide={() => setModalShow(false)} />
-            <Cancel show={cancelModel} onHide={() => setCancelModel(false)} />
+            <Cancel show={cancelModel} bookID={book?.id} onHide={() => setCancelModel(false)} />
         </>
     )
 }
