@@ -17,7 +17,7 @@ function PriceDetails({ flight }) {
           </div>
           <ul className="col p-0 ms-3">
             <li className="my-2 d-flex justify-content-between">
-              <text>ผู้ใหญ่x{flight.traveler}</text>
+              <text>ผู้ใหญ่x{traveler}</text>
               <text className="">{traveler * flight?.price}</text>
             </li>
             <li className="my-2 d-flex justify-content-between">
