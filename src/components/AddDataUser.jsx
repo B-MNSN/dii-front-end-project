@@ -4,7 +4,7 @@ import {Form} from 'react-bootstrap';
 import { useState } from 'react';
 import propType from 'prop-types';
 import axios from 'axios';
-function AddDataUser({addInform}) {
+function AddDataUser() {
     const optionPrefix = [
         {value: 'นางสาว', text: 'นางสาว'},
         {value: 'นาง', text: 'นาง'},
@@ -27,8 +27,9 @@ function AddDataUser({addInform}) {
     const onSubmit = (event) => {
         event.preventDefault();
         // addInform({fname, lname, phoneNumber, email});
-        console.log({fname, lname, phoneNumber, email});
+        console.log({prefix, fname, lname, phoneNumber, email});
         axios.post('http://localhost:8000/user', {
+            prefix,
             fname,
             lname,
             phoneNumber,
