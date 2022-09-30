@@ -16,9 +16,9 @@ function MyBooking() {
         }}
       >
         <Card.Header style={{ backgroundColor: "#02457A" }}>
-          <div class="container-head">
-            <div class="row align-items-start">
-              <div class="col-md-4">
+          <div className="container-head">
+            <div className="row align-items-start">
+              <div className="col-md-4">
                 <h5 style={{ color: "white" }}>
                   <small>รหัสการจอง: </small>
                   <strong style={{ color: "#97CADB" }}>
@@ -26,19 +26,19 @@ function MyBooking() {
                   </strong>{" "}
                 </h5>
               </div>
-              <div class="col-md-4 offset-md-4"></div>
+              <div className="col-md-4 offset-md-4"></div>
             </div>
           </div>
         </Card.Header>
-        <Card.Body class="img-fluid">
-          <Card.Title class="">
+        <Card.Body className="img-fluid">
+          <Card.Title className="">
             <strong>ข้อมูลผู้โดยสาร</strong>{" "}
           </Card.Title>
           <Card.Text>
-            <p class="mb-3" style={{ color: "black" }}>
+            <p className="mb-3" style={{ color: "black" }}>
               <strong>Mrs Elsa Frozen</strong>{" "}
             </p>
-            <footer class="blockquote-footer" style={{ color: "#5F6F94" }}>
+            <footer className="blockquote-footer" style={{ color: "#5F6F94" }}>
               Ticket Number : 1234566789
             </footer>
           </Card.Text>
@@ -48,29 +48,29 @@ function MyBooking() {
             </h5>
           </Card.Title>
           <Card.Text>
-            <div class="container-footer">
-              <div class="row align-items-end">
-                <div class="col order-first">
-                  <p class="mb-3" style={{ color: "#5F6F94" }}>
+            <div className="container-footer">
+              <div className="row align-items-end">
+                <div className="col order-first">
+                  <p className="mb-3" style={{ color: "#5F6F94" }}>
                     <small>ชื่อ-นามสกุล</small>{" "}
                   </p>
-                  <footer class="blockquote-footer" style={{ color: "black" }}>
+                  <footer className="blockquote-footer" style={{ color: "black" }}>
                     <strong>Elsa Frozen</strong>
                   </footer>
                 </div>
-                <div class="col">
-                  <p class="mb-3" style={{ color: "#5F6F94" }}>
+                <div className="col">
+                  <p className="mb-3" style={{ color: "#5F6F94" }}>
                     <small>อีเมล</small>{" "}
                   </p>
-                  <footer class="blockquote-footer" style={{ color: "black" }}>
+                  <footer className="blockquote-footer" style={{ color: "black" }}>
                     <strong>elsa_frozen@email.com</strong>
                   </footer>
                 </div>
-                <div class="col order-last">
-                  <p class="mb-3" style={{ color: "#5F6F94" }}>
+                <div className="col order-last">
+                  <p className="mb-3" style={{ color: "#5F6F94" }}>
                     <small>เบอร์โทรศัพท์</small>
                   </p>
-                  <footer class="blockquote-footer" style={{ color: "black" }}>
+                  <footer className="blockquote-footer" style={{ color: "black" }}>
                     <strong>+66(0)89-789-1234</strong>
                   </footer>
                 </div>
