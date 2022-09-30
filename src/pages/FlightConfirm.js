@@ -9,36 +9,31 @@ import axios from 'axios';
 
 
 function FlightConfirm() {
-    const [books, setBooks] = useState({});
-    // const [airports, setAirports] = useState({});
 
+    const [flights, setFlights] = useState([]);
     useEffect(() => {
-        async function getBooks() {
-            await axios.get(
-                'http://localhost:8000/books/U0002'
-            ).then(res => {
-                setBooks(res.data);
-            });
-            // await axios.get(
-            //     'http://localhost:8000/airports'
-            // ).then(res => {
-            //     setAirports(res.data);
-            // });
+        async function getFlights() {
+            const flights = await axios.get(
+                `http://localhost:8000/flights${window.location.search}`
+            );
+            setFlights(flights.data[0]);
+
         }
-        getBooks();
+        getFlights();
     }, []);
+
     return (
         <>
             <Navbar />
             <Container>
-                <MyFlight books={books} />
+                <MyFlight flight={flights} />
                 <div className='d-flex justify-content-center w-75'>
                     <div className='row '>
                         <div className='col-lg-8'>
-                            <MyFlightDetails books={books} />
+                            <MyFlightDetails flight={flights} />
                         </div>
                         <div className='col'>
-                            <PriceDetails books={books} />
+                            <PriceDetails flight={flights} />
                         </div>
                     </div>
                 </div>

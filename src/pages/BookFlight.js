@@ -17,7 +17,6 @@ function BookFlight() {
     }
     getFlights();
   }, []);
-  console.log(flights);
   return (
 
     <>

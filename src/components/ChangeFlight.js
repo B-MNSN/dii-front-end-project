@@ -61,7 +61,7 @@ function ChangeFlight(props) {
     };
     const repageSearch = () => {
         console.dir(window.location);
-        window.location.href = `/bookFlight?departLocate=${departLocate}&landLocate=${landLocate}`;
+        window.location.href = `/bookFlight?departLocate=${departLocate}&landLocate=${landLocate}&traveler=1`;
     }
     return (
         <Modal {...props} size="xl" aria-labelledby="contained-modal-title-vcenter" centered>

@@ -11,7 +11,7 @@ function Flightbox({ flight }) {
             <div className="bg-secondary bg-opacity-10 shadow-lg border border-1 mt-5 w-75 rounded-4">
                 <div className='row d-flex align-items-center justify-content-center m-4'>
                     <div className='col-md-2 d-flex justify-content-center'>
-                        <img src={flight.imgURLlogo} alt='air-asia-flight' className='picFlight img-fluid'/>
+                        <img src={flight.imgURLlogo} alt='air-asia-flight' className='picFlight img-fluid' />
                     </div>
                     <div className='col-md-3 d-flex align-items-center'>
                         <div className='col'>
@@ -37,7 +37,12 @@ function Flightbox({ flight }) {
                         <p>{`฿${flight.price}/คน `}</p>
                     </div>
                     <div className='col-md-3 d-flex justify-content-center'>
-                        <Link to={`/flightConfirm`}><button className='btnSelectFlight shadow-sm rounded-3 fw-bold px-3 py-1'>เลือกเที่ยวบิน</button></Link>
+                        <Link to={{
+                            pathname: "/flightConfirm",
+                            search: `?id=${flight.id}&traveler=1`
+                            // hash: "#the-hash",
+                            // state: { fromDashboard: true }
+                        }}><button className='btnSelectFlight shadow-sm rounded-3 fw-bold px-3 py-1'>เลือกเที่ยวบิน</button></Link>
                     </div>
                 </div>
             </div>

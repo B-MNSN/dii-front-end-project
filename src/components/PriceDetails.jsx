@@ -1,5 +1,7 @@
 import OptionalReturn from "./OptionalReturn";
-function PriceDetails({ books }) {
+function PriceDetails({ flight }) {
+  console.dir(flight)
+  let traveler = new URLSearchParams(window.location.search).get("traveler");
   return (
     <>
       <div className="row priceDetails bg-secondary bg-opacity-10 shadow-lg border border-1 mt-5 rounded-4 w-100">
@@ -11,12 +13,12 @@ function PriceDetails({ books }) {
         <div className="col-11 mx-4 mt-3">
           <div className="col d-flex justify-content-between">
             <h6 className="fw-bold my-1">เที่ยวบินขาออก</h6>
-            <p className="fw-bold my-1">฿{books.depart?.price}</p>
+            <p className="fw-bold my-1">฿{flight?.price}</p>
           </div>
           <ul className="col p-0 ms-3">
             <li className="my-2 d-flex justify-content-between">
-              <text>ผู้ใหญ่x{books.traveler}</text>
-              <text className="">{books.traveler * books.depart?.price}</text>
+              <text>ผู้ใหญ่x{traveler}</text>
+              <text className="">{traveler * flight?.price}</text>
             </li>
             <li className="my-2 d-flex justify-content-between">
               <text>ภาษี</text>
@@ -28,10 +30,10 @@ function PriceDetails({ books }) {
             </li>
           </ul>
         </div>
-        <OptionalReturn books={books} />
+        <OptionalReturn flight={flight} />
         <div className="col mx-4 mb-4 d-flex justify-content-between border-top border-dark border-2">
           <h5 className="fw-bolder">ราคารวม</h5>
-          <text>฿{books.totalPrice}</text>
+          <text>฿{traveler * flight?.price}</text>
         </div>
       </div>
       <div className="mt-3">
