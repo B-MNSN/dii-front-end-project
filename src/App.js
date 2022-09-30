@@ -24,7 +24,7 @@ function App() {
         <Route path='/addDataUser' element={<AddDataUser />} />
         <Route path='/flightConfirm' element={<FlightConfirm />} />
         <Route path='/myBooking' element={<SuccesBooking />} />
-        
+
       </Routes>
     </>
   );
