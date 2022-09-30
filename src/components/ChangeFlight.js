@@ -62,7 +62,7 @@ function ChangeFlight({ show, onHide, setTemp }) {
     };
     const repageSearch = () => {
         console.dir(window.location);
-        setTemp(`?departLocate=${departLocate}&landLocate=${landLocate}&traveler=1`)
+        setTemp(`?departLocate=${departLocate}&landLocate=${landLocate}&traveler=1`);
     }
     return (
         <Modal {...propSimulator} size="xl" aria-labelledby="contained-modal-title-vcenter" centered>
@@ -146,7 +146,7 @@ function ChangeFlight({ show, onHide, setTemp }) {
                             </Col>
                             <Col lg={4} className='d-flex justify-content-end align-items-center'>
 
-                                <Link to={`/bookFlight?departLocate=${departLocate}&landLocate=${landLocate}`}>
+                                <Link to={`/bookFlight?departLocate=${departLocate}&landLocate=${landLocate}&travel=${travel}&planeClass=${planeClass}`}>
                                     <button onClick={repageSearch} className='btnChange shadow-sm rounded-3 fw-bold px-5 py-1'>Change</button>
                                 </Link>
 

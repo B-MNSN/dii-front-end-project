@@ -140,7 +140,7 @@ function BookingSearch() {
                             <Col lg={1} className='d-flex justify-content-center align-items-end '>
                                 <Link to={{
                                     pathname: "/bookFlight",
-                                    search: `?departLocate=${departLocate}&landLocate=${landLocate}&traveler=1`
+                                    search: `?departLocate=${departLocate}&landLocate=${landLocate}&traveler=1&travel=${travel}&planeClass=${planeClass}`
                                     // hash: "#the-hash",
                                     // state: { fromDashboard: true }
                                 }}
