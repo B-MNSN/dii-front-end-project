@@ -126,7 +126,7 @@ main {
 }
 
 /* MyBooking */
-.img-fluid {
+/* .img-fluid {
     padding: 20px;
     background-image: url("./bgAirplane.jpg");
     background-repeat: no-repeat;
@@ -136,7 +136,7 @@ main {
     .img-fluid {
       background-image: url("./bgResponsive.jpg");
     }
-  }
+  } */
 /* .cardBody {
     background-image: url("./bgResponsive.jpg");
     background-repeat: no-repeat;
