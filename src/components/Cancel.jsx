@@ -9,6 +9,9 @@ function Cancel({ show, onHide, bookID }) {
         console.log(res);
         window.location.href = '/myBooking';
     }
+    const colse = () => {
+        window.location.href = '/myBooking';
+    }
     return (
         <>
             <Modal {...simProps} aria-labelledby="contained-modal-title-vcenter" centered>
@@ -25,7 +28,7 @@ function Cancel({ show, onHide, bookID }) {
                     </div>
                     <div className='d-flex justify-content-center mt-3'>
                         <button onClick={confirmDelete} className='btnConDelete rounded-3 px-3 me-2'>ยืนยัน</button>
-                        <button className='btn btn-outline-danger'>ยกเลิก</button>
+                        <button onClick={colse} className='btn btn-outline-danger'>ยกเลิก</button>
                     </div>
 
 
