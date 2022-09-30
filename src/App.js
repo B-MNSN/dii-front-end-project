@@ -12,10 +12,15 @@ import AddDataUser from './components/AddDataUser';
 
 
 function App() {
+  let userStat = JSON.parse(localStorage.getItem('status'));
+  console.log(userStat)
+  if (userStat === null) {
+    <Login />
+  }
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Login />} />
         <Route path='/login' element={<Login />} />
         <Route path='/home' element={<Home />} />
         <Route path='/bookFlight' element={<BookFlight />} />
