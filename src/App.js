@@ -15,11 +15,11 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<AddDataUser/>}/>
-        <Route path='/home' element={<Home/>}/>
-        <Route path='/bookFlight' element={<BookFlight/>}/>
-        <Route path='/userInfoemation' elament={<UserInformation/>}/>
-        <Route path='/flightConfirm' elament={<FlightConfirm/>}/>
+        <Route path='/' element={<AddDataUser />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/bookFlight' element={<BookFlight />} />
+        <Route path='/userInfoemation' element={<UserInformation />} />
+        <Route path='/flightConfirm' element={<FlightConfirm />} />
         {/* <Route path='/changeFlight' element={<ChangeFlight/>}/> */}
 
       </Routes>

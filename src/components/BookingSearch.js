@@ -133,7 +133,13 @@ function BookingSearch() {
                                 </Form.Group>
                             </Col>
                             <Col lg={1} className='d-flex justify-content-center align-items-end '>
-                                <Link to={`/bookFlight?departLocate=${departLocate}&landLocate=${landLocate}`}><button className='B-seachButton shadow-sm rounded-2 px-3 py-1'><RiSearchLine size={30} color={'#ffffff'} /></button></Link>
+                                <Link to={{
+                                    pathname: "/bookFlight",
+                                    search: `?departLocate=${departLocate}&landLocate=${landLocate}&traveler=1`
+                                    // hash: "#the-hash",
+                                    // state: { fromDashboard: true }
+                                }}
+                                ><button className='B-seachButton shadow-sm rounded-2 px-3 py-1'><RiSearchLine size={30} color={'#ffffff'} /></button></Link>
                                 {/* temp
                                             travel=${travel}&
                                             &planeClass=${planeClass}
