@@ -9,11 +9,15 @@ function MyBooking() {
       <Navbar />
       <Card
         style={{
-          width: "75%",
+          width: "60rem",
           marginTop: "5%",
+          marginLeft: "auto",
+          marginRight: "auto",
+          justifyContent: "center",
           boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
           transition: "0.3s",
         }}
+        
       >
         <Card.Header style={{ backgroundColor: "#02457A" }}>
           <div className="container-head">
