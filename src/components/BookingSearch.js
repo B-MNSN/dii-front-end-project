@@ -26,6 +26,9 @@ function BookingSearch() {
     const [landLocate, setLeadLocate] = useState(option[1].value);
     const [isActive, setIsActive] = useState([true, true]);
     const [planeClass, setPlaneClass] = useState(false);
+    const [countTarvel, setCountTarvel] = useState(0);
+    const [pcCount, setPcCount] = useState(0);
+
 
     const handChange = (fn) => {
         return (event) => {
@@ -39,20 +42,16 @@ function BookingSearch() {
 
     };
     const travelChange = event => {
-        // setTravel('เที่ยวเดียว')
         let flightOptionValue;
         flightOptionValue = (event?.target.innerText);
-
         setTravel(flightOptionValue);
-        setIsActive([false, true])
-    };
-    const travelChange2 = event => {
-        // setTravel('เที่ยวเดียว')
-        let flightOptionValue;
-        flightOptionValue = (event?.target.innerText);
-
-        setTravel(flightOptionValue);
-        setIsActive([true, false])
+        if(countTarvel === 0){
+            setIsActive([false, true])
+            setCountTarvel(prev => ++prev);
+        }else{
+            setIsActive([true, false])
+            setCountTarvel(prev => --prev);
+        }
     };
 
     const planeClassChange = event => {
@@ -60,10 +59,16 @@ function BookingSearch() {
         planeClassValue = (event?.target.innerText);
         setPlaneClass(planeClassValue);
         console.log(planeClass);
-
+        if(pcCount === 0){
+            setPcCount(prev => ++prev);
+            event.target.style.backgroundColor = '#02457A';
+            event.target.style.color = '#fff';
+        }else{
+            setPcCount(prev => --prev);
+            event.target.style.backgroundColor = '#fff';
+            event.target.style.color = '#000';
+        }
     };
-    //  
-    console.log(isActive);
     return (
         <>
             <div className='rounded shadow bg-light d-flex justify-content-center'>
@@ -75,17 +80,17 @@ function BookingSearch() {
                                     <div className={`btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center ${!isActive[0] ? 'btnActive' : ''}`} values={'เที่ยวเดียว'} onClick={travelChange}  >
                                         เที่ยวเดียว
                                     </div>
-                                    <div className={`btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center ${!isActive[1] ? 'btnActive' : ''}`} values={'ไป-กลับ'} onClick={travelChange2}  >
+                                    <div className={`btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center ${!isActive[1] ? 'btnActive' : ''}`} values={'ไป-กลับ'} onClick={travelChange}  >
                                         ไป-กลับ
                                     </div>
                                 </div>
                             </Col>
                             <Col lg={8}>
                                 <div className='row d-flex justify-content-center shadow-sm rounded-3 border border-1 m-auto mt-2'>
-                                    <div id='planeClass' className='col btnCabinClass fw-bold rounded-5 my-2 ms-3 d-flex justify-content-center' value={'Economy'} onClick={planeClassChange}>Economy </div>
-                                    <div className='col btnCabinClass fw-bold rounded-5 my-2 d-flex justify-content-center' value={'Premium economy'} onClick={planeClassChange}>Premium economy</div>
-                                    <div className='col btnCabinClass fw-bold rounded-5 my-2 d-flex justify-content-center' value={'Business class'} onClick={planeClassChange}>Business class </div>
-                                    <div className='col btnCabinClass fw-bold rounded-5 my-2 me-3 d-flex justify-content-center' value={'First class'} onClick={planeClassChange}>First class</div>
+                                    <div id='planeClass' className={`col btnCabinClass fw-bold rounded-5 my-2 ms-3 d-flex justify-content-center `} value={'Economy'} onClick={planeClassChange}>Economy </div>
+                                    <div className={`col btnCabinClass fw-bold rounded-5 my-2 d-flex justify-content-center `} value={'BusinessClass'} onClick={planeClassChange}>Business class </div>
+                                    <div className={`col btnCabinClass fw-bold rounded-5 my-2 d-flex justify-content-center `} value={'PremiumEconomy'} onClick={planeClassChange}>Premium economy</div>
+                                    <div className={`col btnCabinClass fw-bold rounded-5 my-2 me-3 d-flex justify-content-center `} value={'FirstClass'} onClick={planeClassChange}>First class</div>
                                 </div>
                             </Col>
                         </Row>
@@ -133,7 +138,7 @@ function BookingSearch() {
                                 </Form.Group>
                             </Col>
                             <Col lg={1} className='d-flex justify-content-center align-items-end '>
-                                <Link to={`/bookFlight?departLocate=${departLocate}&landLocate=${landLocate}`}><button className='B-seachButton shadow-sm rounded-2 px-3 py-1'><RiSearchLine size={30} color={'#ffffff'} /></button></Link>
+                                <Link to={`/bookFlight?departLocate=${departLocate}&landLocate=${landLocate}&planeClass=${planeClass}`}><button className='B-seachButton shadow-sm rounded-2 px-3 py-1'><RiSearchLine size={30} color={'#ffffff'} /></button></Link>
                                 {/* temp
                                             travel=${travel}&
                                             &planeClass=${planeClass}

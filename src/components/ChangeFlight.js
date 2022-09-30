@@ -19,8 +19,10 @@ function ChangeFlight(props) {
     const [travel, setTravel] = useState(' ');
     const [departLocate, setDepartLocate] = useState(option[0].value);
     const [landLocate, setLeadLocate] = useState(option[1].value);
-    const [isActive, setIsActive] = useState(false);
-    const [planeClass, setPlaneClass] = useState(' ');
+    const [isActive, setIsActive] = useState([true, true]);
+    const [planeClass, setPlaneClass] = useState(false);
+    const [countTarvel, setCountTarvel] = useState(0);
+    const [pcCount, setPcCount] = useState(0);
 
     const handChange = (fn) => {
         return (event) => {
@@ -28,18 +30,17 @@ function ChangeFlight(props) {
         };
     }
 
-    // const onSearch = (event) => {
-    //     event.preventDefault();
-    //     console.log(departLocate, landLocate, departDay, selectDateArrival, travel)
-
-    // };
     const travelChange = event => {
-        // setTravel('เที่ยวเดียว')
         let flightOptionValue;
         flightOptionValue = (event?.target.innerText);
-
         setTravel(flightOptionValue);
-        setIsActive(!true)
+        if(countTarvel === 0){
+            setIsActive([false, true])
+            setCountTarvel(prev => ++prev);
+        }else{
+            setIsActive([true, false])
+            setCountTarvel(prev => --prev);
+        }
     };
 
     const planeClassChange = event => {
@@ -47,6 +48,15 @@ function ChangeFlight(props) {
         planeClassValue = (event?.target.innerText);
         setPlaneClass(planeClassValue);
         console.log(planeClass);
+        if(pcCount === 0){
+            setPcCount(prev => ++prev);
+            event.target.style.backgroundColor = '#02457A';
+            event.target.style.color = '#fff';
+        }else{
+            setPcCount(prev => --prev);
+            event.target.style.backgroundColor = 'none';
+            event.target.style.color = '#000';
+        }
 
     };
     const repageSearch = () => {
@@ -66,20 +76,20 @@ function ChangeFlight(props) {
                         <Row className='pb-3'>
                             <Col lg={4}>
                                 <div className='d-flex justify-content-space-around shadow-sm rounded-3 border border-1 mt-2'>
-                                    <div className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center ' style={{ backgroundColor: isActive ? '#02457A' : '', color: isActive ? 'white' : '' }} values={'เที่ยวเดียว'} onClick={travelChange}  >
+                                    <div className={`btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center ${!isActive[0] ? 'btnActive' : ''}`} values={'เที่ยวเดียว'} onClick={travelChange}  >
                                         เที่ยวเดียว
                                     </div>
-                                    <div className='btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center' values={'ไป-กลับ'} onClick={travelChange}  >
+                                    <div className={`btnFlight fw-bold rounded-5 w-50 my-2 mx-3 d-flex justify-content-center ${!isActive[1] ? 'btnActive' : ''}`} values={'ไป-กลับ'} onClick={travelChange}  >
                                         ไป-กลับ
                                     </div>
                                 </div>
                             </Col>
                             <Col lg={8}>
                                 <div className='row d-flex justify-content-center shadow-sm rounded-3 border border-1 m-auto mt-2'>
-                                    <div id='planeClass' className='col btnCabinClass fw-bold rounded-5 my-2 ms-3 d-flex justify-content-center' value={'Economy'} onClick={planeClassChange}>Economy </div>
+                                    <div id='planeClass' className='col btnCabinClass fw-bold rounded-5 my-2 ms-2 d-flex justify-content-center' value={'Economy'} onClick={planeClassChange}>Economy </div>
                                     <div className='col btnCabinClass fw-bold rounded-5 my-2 d-flex justify-content-center' value={'Premium economy'} onClick={planeClassChange}>Premium economy</div>
                                     <div className='col btnCabinClass fw-bold rounded-5 my-2 d-flex justify-content-center' value={'Business class'} onClick={planeClassChange}>Business class </div>
-                                    <div className='col btnCabinClass fw-bold rounded-5 my-2 me-3 d-flex justify-content-center' value={'First class'} onClick={planeClassChange}>First class</div>
+                                    <div className='col btnCabinClass fw-bold rounded-5 my-2 d-flex me-2 justify-content-center' value={'First class'} onClick={planeClassChange}>First class</div>
                                 </div>
                             </Col>
                         </Row>
