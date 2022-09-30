@@ -9,13 +9,9 @@ import './index.css';
 import BookFlight from './pages/BookFlight';
 import Home from './pages/Home';
 import AddDataUser from './components/AddDataUser';
-import MyBooking from './components/MyBooking';
+// import MyBooking from './components/MyBooking'; -> broken
 import SuccesBooking from './components/SuccesBooking';
 
-import BookFlight from "./pages/BookFlight";
-import Home from "./pages/Home";
-import AddDataUser from "./components/AddDataUser";
-import MyBooking from "./components/MyBooking";
 
 function App() {
   return (
