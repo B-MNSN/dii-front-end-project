@@ -1,28 +1,36 @@
 import React from "react";
 import { CardImg } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import background from "../bgAirplane.jpg"
-const MyBooking = () => {
+import background from "../bgAirplane.jpg";
+import Navbar from "../components/Navbar";
+function MyBooking() {
   return (
     <>
-      <Card style={{ width: "75%",marginTop: "5%",boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",transition: "0.3s" }}>
-        <Card.Header style={{ backgroundColor: "#02457A",}}>
+      <Navbar />
+      <Card
+        style={{
+          width: "75%",
+          marginTop: "5%",
+          boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
+          transition: "0.3s",
+        }}
+      >
+        <Card.Header style={{ backgroundColor: "#02457A" }}>
           <div class="container-head">
             <div class="row align-items-start">
               <div class="col-md-4">
-                
                 <h5 style={{ color: "white" }}>
                   <small>รหัสการจอง: </small>
-                  <strong style={{ color: "#97CADB" }}>DII642110XXX</strong>{" "}
+                  <strong style={{ color: "#97CADB" }}>
+                    DII642110XXX
+                  </strong>{" "}
                 </h5>
               </div>
-              <div class="col-md-4 offset-md-4">
-                
-              </div>
+              <div class="col-md-4 offset-md-4"></div>
             </div>
           </div>
         </Card.Header>
-        <Card.Body class="img-fluid" >
+        <Card.Body class="img-fluid">
           <Card.Title class="">
             <strong>ข้อมูลผู้โดยสาร</strong>{" "}
           </Card.Title>
@@ -40,12 +48,12 @@ const MyBooking = () => {
             </h5>
           </Card.Title>
           <Card.Text>
-            <div class="container-footer" >
+            <div class="container-footer">
               <div class="row align-items-end">
                 <div class="col order-first">
                   <p class="mb-3" style={{ color: "#5F6F94" }}>
                     <small>ชื่อ-นามสกุล</small>{" "}
-                    </p>
+                  </p>
                   <footer class="blockquote-footer" style={{ color: "black" }}>
                     <strong>Elsa Frozen</strong>
                   </footer>
@@ -73,6 +81,6 @@ const MyBooking = () => {
       </Card>
     </>
   );
-};
+}
 
 export default MyBooking;
