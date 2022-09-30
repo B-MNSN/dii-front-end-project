@@ -138,3 +138,10 @@ main {
     color: #fff;
     background: #02457A;
 }
+
+.ticket {
+    background-image: url("./bgAirplane.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+

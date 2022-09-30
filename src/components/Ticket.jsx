@@ -15,7 +15,7 @@ function Ticket({ show, onHide, book, flight }) {
                         </div>
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body className="bg-secondary bg-opacity-10">
+                <Modal.Body className="ticket">
                     <div className='row mx-5 my-2'>
                         <div className='col-12 mb-4'>
                             <text className='me-3 fw-bold text-uppercase fs-5'>Name:</text>
@@ -44,9 +44,6 @@ function Ticket({ show, onHide, book, flight }) {
                         <div className='col-4 mb-4'>
                             <text className='me-3 fw-bold text-uppercase fs-5'>Boarding Time:</text>
                             <text className='fs-6'>{flight?.departTime}</text>
-                        </div>
-                        <div className='col-12 d-flex justify-content-end'>
-                            <button className='btnEdit shadow-sm rounded-3 fw-bold px-5 py-1'>แก้ไขข้อมูล</button>
                         </div>
                     </div>
 
