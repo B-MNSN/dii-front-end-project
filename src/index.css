@@ -46,7 +46,7 @@ main {
     width: 15%;
 }
 
-.buttonLogin, .buttonSignup, .bg-blue, .bgInform  {
+.buttonLogin, .buttonSignup, .bg-blue, .bgInform, .cardHeader  {
     background-color: #02457A;
 
 }
@@ -90,7 +90,7 @@ main {
     border-bottom: 3px solid #ffffff;
 }
 
-/* ChangeFlight */
+/* ChangeFlight, Cancel */
 .btnChange, .topModal {
     background-color: #02457A;
     color: #ffffff;
@@ -100,7 +100,7 @@ main {
     border: none;
     color: black;
 }
-.btnCabinClass:hover, .btnFlight:hover, .btnChangeFlight{
+.btnCabinClass:hover, .btnFlight:hover, .btnChangeFlight,.btnConDelete{
     border: none;
     background: #02457A;
     color: #ffffff;
@@ -130,4 +130,17 @@ main {
       background-image: url("./bgResponsive.jpg");
     } */
   }
-
+/* .cardBody {
+    background-image: url("./bgResponsive.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+} */
+.btnEdit{
+    border: 2px solid #02457A;
+    color: #02457A;
+}
+.btnEdit:hover{
+    color: #fff;
+    background: #02457A;
+}
