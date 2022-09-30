@@ -5,20 +5,11 @@
     font-family: 'Noto Sans Thai', sans-serif;
 }
 
-html {
-    height: 100%;
-}
-
-/* body {
-    margin: 0;
-    
-}
-
 .login-page, .signup-page {
     background: linear-gradient(180deg, rgba(1, 138, 190, 0.6) 0%, rgba(32, 91, 138, 0.4) 100%);
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
+    height: 100vh;
+
+}
 
 .nav {
     background-color: #02457A;
@@ -46,7 +37,7 @@ main {
     width: 15%;
 }
 
-.buttonLogin, .buttonSignup, .bg-blue, .bgInform  {
+.buttonLogin, .buttonSignup, .bg-blue, .bgInform, .cardHeader  {
     background-color: #02457A;
 
 }
@@ -90,7 +81,7 @@ main {
     border-bottom: 3px solid #ffffff;
 }
 
-/* ChangeFlight */
+/* ChangeFlight, Cancel */
 .btnChange, .topModal {
     background-color: #02457A;
     color: #ffffff;
@@ -100,7 +91,7 @@ main {
     border: none;
     color: black;
 }
-.btnCabinClass:hover, .btnFlight:hover, .btnChangeFlight{
+.btnCabinClass:hover, .btnFlight:hover, .btnChangeFlight,.btnConDelete{
     border: none;
     background: #02457A;
     color: #ffffff;
@@ -126,7 +117,7 @@ main {
 }
 
 /* MyBooking */
-.img-fluid {
+/* .img-fluid {
     padding: 20px;
     background-image: url("./bgAirplane.jpg");
     background-repeat: no-repeat;
@@ -136,5 +127,18 @@ main {
     .img-fluid {
       background-image: url("./bgResponsive.jpg");
     }
-  }
-
+  } */
+/* .cardBody {
+    background-image: url("./bgResponsive.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+} */
+.btnEdit{
+    border: 2px solid #02457A;
+    color: #02457A;
+}
+.btnEdit:hover{
+    color: #fff;
+    background: #02457A;
+}

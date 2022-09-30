@@ -9,7 +9,7 @@ import axios from 'axios';
 
 
 function FlightConfirm() {
-
+    let userStat = JSON.parse(localStorage.getItem('status'));
     const [flights, setFlights] = useState([]);
     useEffect(() => {
         async function getFlights() {
@@ -21,26 +21,30 @@ function FlightConfirm() {
         }
         getFlights();
     }, []);
-
-    return (
-        <>
-            <Navbar />
-            <Container>
-                <MyFlight flight={flights} />
-                <div className='d-flex justify-content-center w-75'>
-                    <div className='row '>
-                        <div className='col-lg-8'>
-                            <MyFlightDetails flight={flights} />
-                        </div>
-                        <div className='col'>
-                            <PriceDetails flight={flights} />
+    console.dir(flights);
+    if (userStat?.username) {
+        return (
+            <>
+                <Navbar />
+                <Container>
+                    <MyFlight flight={flights} />
+                    <div className='d-flex justify-content-center w-75'>
+                        <div className='row '>
+                            <div className='col-lg-8'>
+                                <MyFlightDetails flight={flights} />
+                            </div>
+                            <div className='col'>
+                                <PriceDetails flight={flights} />
+                            </div>
                         </div>
                     </div>
-                </div>
-            </Container>
+                </Container>
+            </>
+        );
+    } else {
+        window.location.href = '/';
+    }
 
-        </>
-    );
 };
 
 export default FlightConfirm;
