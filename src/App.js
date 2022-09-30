@@ -1,5 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Route, Routes } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Route, Routes } from "react-router-dom";
 // import AddDataUser from './components/AddDataUser';
 // import ChangeFlight from './components/ChangeFlight';
 // import MyBooking from './components/MyBooking';
@@ -12,6 +12,10 @@ import AddDataUser from './components/AddDataUser';
 import MyBooking from './components/MyBooking';
 import SuccesBooking from './components/SuccesBooking';
 
+import BookFlight from "./pages/BookFlight";
+import Home from "./pages/Home";
+import AddDataUser from "./components/AddDataUser";
+import MyBooking from "./components/MyBooking";
 
 function App() {
   return (
@@ -24,6 +28,7 @@ function App() {
         <Route path='/flightConfirm' element={<FlightConfirm/>}/>
         <Route path='/myBooking' element={<SuccesBooking/>}/>
 
+        {/* <Route path='/changeFlight' element={<ChangeFlight/>}/> */}
       </Routes>
     </>
   );
