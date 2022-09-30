@@ -124,30 +124,10 @@ main {
     background: #02457A !important;
     color : #fff !important
 }
-/* MyFlightDetails */
-.flightDeparture{
-    width: 50%;
-    height: 25rem;
-
-}
-
-/* PriceDetail */
-.priceDetails {
-    width: 25rem;
-    height: 27rem;
-}
-
-/* MyBooking */
-.img-fluid {
-    padding: 20px;
-    background-image: url("./bgAirplane.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;  
-}
 
 @media screen and (max-width: 865px) {
-    .img-fluid {
+    /* .img-fluid {
       background-image: url("./bgResponsive.jpg");
-    }
+    } */
   }
 

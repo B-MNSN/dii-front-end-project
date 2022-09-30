@@ -4,8 +4,8 @@ function PriceDetails({ flight }) {
   let traveler = new URLSearchParams(window.location.search).get("traveler");
   return (
     <>
-      <div className="row priceDetails bg-secondary bg-opacity-10 shadow-lg border border-1 mt-5 rounded-4 w-100">
-        <div className="col mx-4 mt-4 border-bottom border-dark border-2">
+      <div className="row priceDetails bg-secondary bg-opacity-10 shadow-lg border border-1 mt-5 rounded-4">
+        <div className="col mx-4 mt-4 border-bottom border-dark border-1">
           <h5 className="fw-bolder">
             รายละเอียด
           </h5>
@@ -31,7 +31,7 @@ function PriceDetails({ flight }) {
           </ul>
         </div>
         <OptionalReturn flight={flight} />
-        <div className="col mx-4 mb-4 d-flex justify-content-between border-top border-dark border-2">
+        <div className="col mx-4 mb-4 mt-2 d-flex justify-content-between border-top border-dark border-1">
           <h5 className="fw-bolder">ราคารวม</h5>
           <text>฿{traveler * flight?.price}</text>
         </div>
