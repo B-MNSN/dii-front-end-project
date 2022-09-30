@@ -9,6 +9,8 @@ import './index.css';
 import BookFlight from './pages/BookFlight';
 import Home from './pages/Home';
 import AddDataUser from './components/AddDataUser';
+import MyBooking from './components/MyBooking';
+import SuccesBooking from './components/SuccesBooking';
 
 
 function App() {
@@ -20,7 +22,7 @@ function App() {
         <Route path='/bookFlight' element={<BookFlight/>}/>
         <Route path='/addDataUser' element={<AddDataUser/>}/>
         <Route path='/flightConfirm' element={<FlightConfirm/>}/>
-        {/* <Route path='/changeFlight' element={<ChangeFlight/>}/> */}
+        <Route path='/myBooking' element={<SuccesBooking/>}/>
 
       </Routes>
     </>
