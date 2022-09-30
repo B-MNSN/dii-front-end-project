@@ -23,9 +23,8 @@ function App() {
         <Route path='/bookFlight' element={<BookFlight />} />
         <Route path='/addDataUser' element={<AddDataUser />} />
         <Route path='/flightConfirm' element={<FlightConfirm />} />
-        {/* <Route path='/changeFlight' element={<ChangeFlight/>}/> */}
-
-        {/* <Route path='/changeFlight' element={<ChangeFlight/>}/> */}
+        <Route path='/myBooking' element={<SuccesBooking />} />
+        
       </Routes>
     </>
   );

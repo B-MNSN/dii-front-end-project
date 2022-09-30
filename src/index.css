@@ -5,20 +5,11 @@
     font-family: 'Noto Sans Thai', sans-serif;
 }
 
-html {
-    height: 100%;
-}
-
-/* body {
-    margin: 0;
-    
-}
-
 .login-page, .signup-page {
     background: linear-gradient(180deg, rgba(1, 138, 190, 0.6) 0%, rgba(32, 91, 138, 0.4) 100%);
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
+    height: 100vh;
+
+}
 
 .nav {
     background-color: #02457A;
