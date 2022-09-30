@@ -6,27 +6,36 @@ import Flight from '../components/Flight';
 import CardSelectFlight from '../components/CardsSelectFlight';
 
 
+
 function BookFlight() {
+
+  let userStat = JSON.parse(localStorage.getItem('status'));
   const [flights, setFlights] = useState([]);
+  const [temp, setTemp] = useState(window.location.search);
+
   useEffect(() => {
     async function getFlights() {
       const flights = await axios.get(
-        `http://localhost:8000/flights${window.location.search}`
+        `http://localhost:8000/flights${temp}`
       );
       setFlights(flights.data);
     }
     getFlights();
-  }, []);
-  return (
+  }, [temp]);
+  if (userStat?.username) {
+    return (
+      <>
+        <Navbar />
+        <Container>
+          <Flight setTemp={setTemp} />
+          <CardSelectFlight flights={flights} />
+        </Container>
+      </>
+    )
+  } else {
+    window.location.href = '/'
+  }
 
-    <>
-      <Navbar />
-      <Container>
-        <Flight />
-        <CardSelectFlight flights={flights} />
-      </Container>
-    </>
-  )
 }
 
 export default BookFlight

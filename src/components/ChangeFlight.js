@@ -4,7 +4,8 @@ import DatePicker from 'react-date-picker';
 import { Link } from 'react-router-dom';
 
 
-function ChangeFlight(props) {
+function ChangeFlight({ show, onHide, setTemp }) {
+    const propSimulator = { onHide, show }
     const [departDay, setdepartDay] = useState(new Date());
     const handleDateChangeDepart = (date) => { setdepartDay(date); };
 
@@ -34,10 +35,10 @@ function ChangeFlight(props) {
         let flightOptionValue;
         flightOptionValue = (event?.target.innerText);
         setTravel(flightOptionValue);
-        if(countTarvel === 0){
+        if (countTarvel === 0) {
             setIsActive([false, true])
             setCountTarvel(prev => ++prev);
-        }else{
+        } else {
             setIsActive([true, false])
             setCountTarvel(prev => --prev);
         }
@@ -48,11 +49,11 @@ function ChangeFlight(props) {
         planeClassValue = (event?.target.innerText);
         setPlaneClass(planeClassValue);
         console.log(planeClass);
-        if(pcCount === 0){
+        if (pcCount === 0) {
             setPcCount(prev => ++prev);
             event.target.style.backgroundColor = '#02457A';
             event.target.style.color = '#fff';
-        }else{
+        } else {
             setPcCount(prev => --prev);
             event.target.style.backgroundColor = 'none';
             event.target.style.color = '#000';
@@ -61,10 +62,10 @@ function ChangeFlight(props) {
     };
     const repageSearch = () => {
         console.dir(window.location);
-        window.location.href = `/bookFlight?departLocate=${departLocate}&landLocate=${landLocate}&traveler=1`;
+        setTemp(`?departLocate=${departLocate}&landLocate=${landLocate}&traveler=1`)
     }
     return (
-        <Modal {...props} size="xl" aria-labelledby="contained-modal-title-vcenter" centered>
+        <Modal {...propSimulator} size="xl" aria-labelledby="contained-modal-title-vcenter" centered>
             <Modal.Header closeButton className='topModal bg-opacity-10 btn-light'>
                 <Modal.Title id="contained-modal-title-vcenter">
                     <h2 className='ms-3 mt-1 mb-0 fw-bold'>เปลี่ยนเที่ยวบิน</h2>
