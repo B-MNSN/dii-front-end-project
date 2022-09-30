@@ -21,7 +21,7 @@ function FlightConfirm() {
         }
         getFlights();
     }, []);
-    console.dir(flights);
+
     if (userStat?.username) {
         return (
             <>
