@@ -7,7 +7,7 @@ function Home() {
   const mainPic = require("../Elements/airplane-bg.jpg");
   const TripDoiSuThep = require("../Elements/DoiSuThep.jpg");
   const TripBorLuang = require("../Elements/BorLuang.jpg");
-  const TripYaowarat = require("../Elements/Taowarat.jpg");
+  const TripYaowarat = require("../Elements/Yaowarat.jpg");
   const Trip100Jula = require("../Elements/100Jula.jpg");
 
 
@@ -26,17 +26,6 @@ function Home() {
           />
         </Row>
         <Row className="justify-content-center ml-auto">
-          <Card style={{ width: "18rem" }} className="rounded p-0 m-3">
-            <Card.Img variant="top" src={mainPic} />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
           <Card style={{ width: "18rem" }} className="rounded p-0 m-3">
             <Card.Img variant="top" src={TripDoiSuThep} />
             <Card.Body>
