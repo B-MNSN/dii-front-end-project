@@ -83,6 +83,9 @@ main {
     color: #ffffff;
     
 }
+.topModal {
+    padding: 5px 50px;
+}
 .btnCabinClass, .btnFlight {
     border: none;
     color: black;
