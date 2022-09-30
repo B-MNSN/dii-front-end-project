@@ -5,7 +5,9 @@ import { useState } from 'react';
 import axios from 'axios';
 
 function Login() {
-
+    function onLoad() {
+        localStorage.clear();
+    }
     const [username, setUsername] = useState([]);
     const [pwd, setPwd] = useState([]);
     const [UserInfo, setUserInfo] = useState({})
@@ -30,7 +32,7 @@ function Login() {
     } else {
         return (
             <>
-                <div className='login-page'>
+                <div onLoad={onLoad} className='login-page'>
                     <img src={logo} alt='logo' className='logo mt-3' />
                     <div className='login-bg mt-3 rounded-3'>
                         <div className='d-flex justify-content-end mt-3 me-4'>

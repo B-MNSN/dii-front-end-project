@@ -12,11 +12,6 @@ import AddDataUser from './components/AddDataUser';
 
 
 function App() {
-  let userStat = JSON.parse(localStorage.getItem('status'));
-  console.log(userStat)
-  if (userStat === null) {
-    <Login />
-  }
   return (
     <>
       <Routes>
