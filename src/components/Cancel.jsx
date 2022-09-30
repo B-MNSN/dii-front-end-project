@@ -18,8 +18,8 @@ function Cancel(props){
                        <text className='fw-bold fs-4'>"ยกเลิกการจองหรือไม่"</text> 
                     </div>
                     <div className='d-flex justify-content-center mt-3'>
-                        <button className='btnConDelete shadow-sm rounded-3 px-3 me-2'>ยืนยัน</button>
-                        <button className='btn btn-outline-dark'>ยกเลิก</button>
+                        <button className='btnConDelete rounded-3 px-3 me-2'>ยืนยัน</button>
+                        <button className='btn btn-outline-danger'>ยกเลิก</button>
                     </div>
                     
                     
