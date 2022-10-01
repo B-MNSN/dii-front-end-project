@@ -57,13 +57,13 @@ main {
     object-fit: cover;
 }
 
-.H-seachBox {
+.H-searchBox {
     z-index: 1;
     /* width: 100%; */
     top: 19rem
 }
 
-.H-seachBoxContainer {
+.H-searchBoxContainer {
     height: 32rem;
     width: 100%;
     max-width: 1440px;
