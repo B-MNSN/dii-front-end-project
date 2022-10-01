@@ -1,9 +1,11 @@
 import { TbPlaneDeparture } from 'react-icons/tb';
-import { TbPlaneArrival } from 'react-icons/tb';
+// import { TbPlaneArrival } from 'react-icons/tb';
 import { useState } from 'react';
 import ChangeFlight from './ChangeFlight';
-function Flight({ setTemp }) {
+
+function Flight({ setTemp, flights }) {
     const [modalShow, setModalShow] = useState(false);
+    //console.log(`myFlight: ${flights}`)
     return (
         <>
 
@@ -13,16 +15,16 @@ function Flight({ setTemp }) {
                         <TbPlaneDeparture size='50' className='me-3' color='#02457A' />
                         <div className='col'>
                             <h5 className='fw-bolder'>เที่ยวบินขาออก</h5>
-                            <p>BKKA-CNX | day, date/mm</p>
+                            <p>{`${flights?.departCode}-${flights?.landCode} | ${flights?.departDay}`}</p>
                         </div>
                     </div>
-                    <div className="col arrivalFlight d-flex ">
+                    {/* <div className="col arrivalFlight d-flex ">
                         <TbPlaneArrival size='50' className='me-3' color='#02457A' />
                         <div className='col'>
                             <h5 className='fw-bolder'>เที่ยวบินขาเข้า</h5>
                             <p>BKKA-CNX | day, date/mm</p>
                         </div>
-                    </div>
+                    </div> */}
                     <div className='col-lg-4'>
                         <div className='d-flex justify-content-center '>
                             <button href='/changeFlight' className='btnChangeFlight shadow-sm rounded-3 fw-bold px-4 py-2' onClick={() => setModalShow(true)}>Change Flight</button>

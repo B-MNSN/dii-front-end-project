@@ -22,12 +22,13 @@ function BookFlight() {
     }
     getFlights();
   }, [temp]);
+  console.log(flights)
   if (userStat?.username) {
     return (
       <>
         <Navbar />
         <Container>
-          <Flight setTemp={setTemp} />
+          <Flight setTemp={setTemp} flights={flights[0]}/>
           <CardSelectFlight flights={flights} />
         </Container>
       </>

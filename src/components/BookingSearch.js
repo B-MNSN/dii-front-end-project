@@ -88,9 +88,9 @@ function BookingSearch() {
                             <Col lg={8}>
                                 <div className='row d-flex justify-content-center shadow-sm rounded-3 border border-1 m-auto mt-2'>
                                     <div id='planeClass' className={`col btnCabinClass fw-bold rounded-5 my-2 ms-3 d-flex justify-content-center `} value={'Economy'} onClick={planeClassChange}>Economy </div>
-                                    <div className={`col btnCabinClass fw-bold rounded-5 my-2 d-flex justify-content-center `} value={'BusinessClass'} onClick={planeClassChange}>Business class </div>
-                                    <div className={`col btnCabinClass fw-bold rounded-5 my-2 d-flex justify-content-center `} value={'PremiumEconomy'} onClick={planeClassChange}>Premium economy</div>
-                                    <div className={`col btnCabinClass fw-bold rounded-5 my-2 me-3 d-flex justify-content-center `} value={'FirstClass'} onClick={planeClassChange}>First class</div>
+                                    <div className={`col btnCabinClass fw-bold rounded-5 my-2 d-flex justify-content-center `} value={'BusinessClass'} onClick={planeClassChange}>BusinessClass </div>
+                                    <div className={`col btnCabinClass fw-bold rounded-5 my-2 d-flex justify-content-center `} value={'PremiumEconomy'} onClick={planeClassChange}>PremiumEconomy</div>
+                                    <div className={`col btnCabinClass fw-bold rounded-5 my-2 me-3 d-flex justify-content-center `} value={'FirstClass'} onClick={planeClassChange}>FirstClass</div>
                                 </div>
                             </Col>
                         </Row>
