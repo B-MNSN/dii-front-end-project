@@ -4,6 +4,7 @@ import { Card } from "react-bootstrap";
 
 function CardSlider() {
 
+  const [data, setData] = useState()
   async function fetchData() {
     await axios
       .get(
@@ -36,7 +37,7 @@ function CardSlider() {
                   className="rounded p-0 m-8"
                   key={index}
                 >
-                  <Card.Img variant="top" src={mainPic} />
+                  {/* <Card.Img variant="top" src={mainPic} /> */}
                   <Card.Body>
                     <Card.Title>{item.id}</Card.Title>
                     <Card.Text>{item.country}</Card.Text>
