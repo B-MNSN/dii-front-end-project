@@ -6,7 +6,14 @@ import DatePicker from 'react-date-picker';
 // import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import { userSelector, useDispatch } from 'react-redux';
+import { planeClass, departLocate, travel, isActive } from '../reducers/actions';
+
 function BookingSearch() {
+
+    const dispatch = useDispatch();
+    // const navigate = useNavigate();
+
     const [departDay, setdepartDay] = useState(new Date());
     const handleDateChangeDepart = (date) => {
         setdepartDay(date);
@@ -21,17 +28,18 @@ function BookingSearch() {
         { value: 'กรุงเทพมหานคร', text: 'กรุงเทพมหานคร' }
     ];
 
-    const [travel, setTravel] = useState(' ');
+    // const [travel, setTravel] = useState(' ');
     const [departLocate, setDepartLocate] = useState(option[0].value);
     const [landLocate, setLeadLocate] = useState(option[1].value);
     const [isActive, setIsActive] = useState([true, true]);
-    const [planeClass, setPlaneClass] = useState(false);
+    // const [planeClass, setPlaneClass] = useState(false);
     const [countTarvel, setCountTarvel] = useState(0);
     const [pcCount, setPcCount] = useState(0);
 
 
     const handChange = (fn) => {
         return (event) => {
+            dispatch(departLocate({ departLocate }));
             fn(event.target.value);
         };
     }
@@ -44,8 +52,10 @@ function BookingSearch() {
     const travelChange = event => {
         let flightOptionValue;
         flightOptionValue = (event?.target.innerText);
-        setTravel(flightOptionValue);
+        // setTravel(flightOptionValue);
+        dispatch(travel({ flightOptionValue }));
         if(countTarvel === 0){
+           
             setIsActive([false, true])
             setCountTarvel(prev => ++prev);
         }else{
@@ -54,11 +64,15 @@ function BookingSearch() {
         }
     };
 
+        
     const planeClassChange = event => {
         let planeClassValue;
         planeClassValue = (event?.target.innerText);
-        setPlaneClass(planeClassValue);
+        // setPlaneClass(planeClassValue);
         console.log(planeClass);
+        event.preventDefault();
+        dispatch(planeClass({ value: planeClassValue}));
+
         if(pcCount === 0){
             setPcCount(prev => ++prev);
             event.target.style.backgroundColor = '#02457A';
