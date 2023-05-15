@@ -6,8 +6,8 @@ import DatePicker from 'react-date-picker';
 // import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { userSelector, useDispatch } from 'react-redux';
-import { planeClass, departLocate, travel, isActive } from '../reducers/actions';
+import { useDispatch } from 'react-redux';
+import { planeClass, departLocation, travel, isActive, landLocation } from '../reducers/actions';
 
 function BookingSearch() {
 
@@ -36,13 +36,15 @@ function BookingSearch() {
     const [countTarvel, setCountTarvel] = useState(0);
     const [pcCount, setPcCount] = useState(0);
 
-
+   
     const handChange = (fn) => {
         return (event) => {
-            dispatch(departLocate({ departLocate }));
             fn(event.target.value);
+            // dispatch(departLocation({ departLocate }));
+            // dispatch(landLocation({landLocate}));
         };
     }
+
 
     const onSearch = (event) => {
         event.preventDefault();
@@ -66,22 +68,36 @@ function BookingSearch() {
 
         
     const planeClassChange = event => {
-        let planeClassValue;
-        planeClassValue = (event?.target.innerText);
+        let planeClassValue = (event?.target.innerText);
         // setPlaneClass(planeClassValue);
-        console.log(planeClass);
+        // console.log(planeClass);
         event.preventDefault();
         dispatch(planeClass({ value: planeClassValue}));
+        const boxPlanclass = document.getElementById('box-planClass');
+        const childBoxPlanclass = boxPlanclass.children;
 
-        if(pcCount === 0){
-            setPcCount(prev => ++prev);
-            event.target.style.backgroundColor = '#02457A';
-            event.target.style.color = '#fff';
-        }else{
-            setPcCount(prev => --prev);
-            event.target.style.backgroundColor = '#fff';
-            event.target.style.color = '#000';
+        if(planeClass) {
+            
+            for (let i = 0; i < childBoxPlanclass.length; i++) {
+                const childElement = childBoxPlanclass[i];
+                if (childElement.classList.contains('active')) {
+                    childElement.classList.remove('active');
+                  }
+            }
+
+            event.target.classList.add('active');
+
         }
+
+        // if(pcCount === 0){
+        //     setPcCount(prev => ++prev);
+        //     event.target.style.backgroundColor = '#02457A';
+        //     event.target.style.color = '#fff';
+        // }else{
+        //     setPcCount(prev => --prev);
+        //     event.target.style.backgroundColor = '#fff';
+        //     event.target.style.color = '#000';
+        // }
     };
     return (
         <>
@@ -100,7 +116,7 @@ function BookingSearch() {
                                 </div>
                             </Col>
                             <Col lg={8}>
-                                <div className='row d-flex justify-content-center shadow-sm rounded-3 border border-1 m-auto mt-2'>
+                                <div className='row d-flex justify-content-center shadow-sm rounded-3 border border-1 m-auto mt-2' id='box-planClass'>
                                     <div id='planeClass' className={`col btnCabinClass fw-bold rounded-5 my-2 ms-3 d-flex justify-content-center `} value={'Economy'} onClick={planeClassChange}>Economy </div>
                                     <div className={`col btnCabinClass fw-bold rounded-5 my-2 d-flex justify-content-center `} value={'BusinessClass'} onClick={planeClassChange}>BusinessClass </div>
                                     <div className={`col btnCabinClass fw-bold rounded-5 my-2 d-flex justify-content-center `} value={'PremiumEconomy'} onClick={planeClassChange}>PremiumEconomy</div>
