@@ -7,7 +7,7 @@ import DatePicker from 'react-date-picker';
 import { Link } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
-import { planeClass, departLocation, travel, isActive, landLocation } from '../reducers/actions';
+import { planeClass, departLocation, travel, landLocation } from '../reducers/actions';
 
 function BookingSearch() {
 
