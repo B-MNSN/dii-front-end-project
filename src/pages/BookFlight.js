@@ -22,6 +22,9 @@ function BookFlight() {
     }
     getFlights();
   }, [temp]);
+  
+  console.log(temp);
+
   console.log(flights)
   if (userStat?.username) {
     return (

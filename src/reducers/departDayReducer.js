@@ -1,6 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { departDay } from "./actions";
+import { departDayReducer } from "./actions";
 
 export default createReducer([], {
-    [departDay]: (state, action) => {}
+    [departDayReducer]: (state, action) => {}
 });

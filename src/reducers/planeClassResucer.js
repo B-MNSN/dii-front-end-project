@@ -1,8 +1,14 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { planeClass } from './actions';
+import { planeClassReducer, updatePlaneClass } from './actions';
 
 export default createReducer([], {
-    [planeClass]: (state, action) => {
-        state.push({value: action.value, ...action.payload});
-    }
+    [planeClassReducer]: (state, action) => {
+        state.push({value: action.payload.value, ...action.payload});
+    },
+    [updatePlaneClass]: (state, action) => {
+        const planeClassIndex = state.findIndex(
+          (planeClass) => planeClass.id === action.payload.id
+        );
+        state[planeClassIndex] = action.payload;
+    },
 });

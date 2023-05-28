@@ -1,6 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { landLocation } from "./actions";
+import { landLocationReducer } from "./actions";
 
 export default createReducer([], {
-    [landLocation]: (state, action) => {}
+    [landLocationReducer]: (state, action) => {}
 });

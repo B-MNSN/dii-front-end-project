@@ -6,8 +6,8 @@ import DatePicker from 'react-date-picker';
 // import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { useDispatch } from 'react-redux';
-import { planeClass, departLocation, travel, landLocation } from '../reducers/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { planeClassReducer, departLocationReducer, travelReducer, landLocationReducer } from '../reducers/actions';
 
 function BookingSearch() {
 
@@ -27,37 +27,45 @@ function BookingSearch() {
         { value: 'กรุงเทพมหานคร', text: 'กรุงเทพมหานคร' }
     ];
 
-    // const [travel, setTravel] = useState(' ');
+    const [travel, setTravel] = useState(' ');
     const [departLocate, setDepartLocate] = useState(option[0].value);
     const [landLocate, setLeadLocate] = useState(option[1].value);
     // const [isActive, setIsActive] = useState([true, true]);
-    // const [planeClass, setPlaneClass] = useState(false);
+    const [planeClass, setPlaneClass] = useState('');
     // const [countTarvel, setCountTarvel] = useState(0);
     // const [pcCount, setPcCount] = useState(0);
 
    
-    const handChange = (fn) => {
+    const handChange = (fn, reducer) => {
         return (event) => {
-            fn(event.target.value);
-            // dispatch(departLocation({ departLocate }));
-            // dispatch(landLocation({landLocate}));
+            const selectedValue = event.target.value;
+            fn(selectedValue);
+            if (reducer === 'departLocationReducer') {
+                dispatch(departLocationReducer({ departLocate: selectedValue }));
+            } else if (reducer === 'landLocationReducer') {
+                dispatch(landLocationReducer({ landLocate: selectedValue }));
+            }
         };
     }
+
+    // console.log(handChange);
 
 
     const onSearch = (event) => {
         event.preventDefault();
-        console.log(departLocate, landLocate, departDay, selectDateArrival, travel)
+        // console.log(departLocate, landLocate, departDay, selectDateArrival, travel)
 
     };
+
     const travelChange = event => {
-        let flightOptionValue = (event?.target.innerText);
-        dispatch(travel({ flightOptionValue }));
+        const selectedTravel = event.target.innerText;
+        setTravel(selectedTravel);
+        dispatch(travelReducer({ textTravel: selectedTravel }));
 
         const boxTravel = document.getElementById('box-travel');
         const childBoxTravel = boxTravel.children;
 
-        if(flightOptionValue){
+        if(selectedTravel){
             for (let i = 0; i < childBoxTravel.length; i++) {
                 const childElement = childBoxTravel[i];
                 if (childElement.classList.contains('active')) {
@@ -71,13 +79,14 @@ function BookingSearch() {
 
         
     const planeClassChange = event => {
-        let planeClassValue = (event?.target.innerText);
         event.preventDefault();
-        dispatch(planeClass({ value: planeClassValue}));
+        const selectedPlaneClassValue = event.target.innerText;
+        setPlaneClass(selectedPlaneClassValue)
+        dispatch(planeClassReducer({ value: selectedPlaneClassValue}));
         const boxPlanclass = document.getElementById('box-planClass');
         const childBoxPlanclass = boxPlanclass.children;
 
-        if(planeClass) {
+        if(selectedPlaneClassValue) {
             
             for (let i = 0; i < childBoxPlanclass.length; i++) {
                 const childElement = childBoxPlanclass[i];
@@ -91,6 +100,28 @@ function BookingSearch() {
         }
 
     };
+
+
+    const depart = useSelector(state => state.departLocationReducer);
+    const land = useSelector(state => state.landLocationReducer);
+    const travelSelect = useSelector(state => state.travelReducer);
+    const planeClassSelect = useSelector(state => state.planeClassReducer);
+
+
+    const queryParams = {
+        departLocate,
+        landLocate,
+        traveler: 1,
+        travel,
+        planeClass
+    };
+    
+    const queryString = new URLSearchParams(queryParams).toString();
+    const url = `/bookFlight?${queryString}`;
+
+    console.log(depart, land, travelSelect, planeClassSelect)
+
+
     return (
         <>
             <div className='rounded shadow bg-light d-flex justify-content-center'>
@@ -120,7 +151,7 @@ function BookingSearch() {
                             <Col lg={2}>
                                 <Form.Group>
                                     <Form.Label className='fw-bold'>ต้นทาง</Form.Label>
-                                    <Form.Select value={departLocate} onChange={handChange(setDepartLocate)}>
+                                    <Form.Select value={departLocate} onChange={handChange(setDepartLocate, 'departLocationReducer')}>
                                         {option.map(option => (
                                             <option key={option.value} value={option.value}>{option.text}</option>
                                         ))}
@@ -130,7 +161,7 @@ function BookingSearch() {
                             <Col lg={2}>
                                 <Form.Group>
                                     <Form.Label className='fw-bold'>ปลายทาง</Form.Label>
-                                    <Form.Select value={landLocate} onChange={handChange(setLeadLocate)}>
+                                    <Form.Select value={landLocate} onChange={handChange(setLeadLocate, 'landLocationReducer')}>
                                         {option.map(option => (
                                             <option key={option.value} value={option.value}>{option.text}</option>
                                         ))}
@@ -160,12 +191,12 @@ function BookingSearch() {
                                 </Form.Group>
                             </Col>
                             <Col lg={1} className='d-flex justify-content-center align-items-end '>
-                                <Link to={{
-                                    pathname: "/bookFlight",
-                                    search: `?departLocate=${departLocate}&landLocate=${landLocate}&traveler=1&travel=${travel}&planeClass=${planeClass}`
+                                <Link to={ url
+                                    // pathname: "/bookFlight",
+                                    // search: `?departLocate=${depart}&landLocate=${land}&traveler=1&travel=${travelSelect}&planeClass=${planeClassSelect}`
                                     // hash: "#the-hash",
                                     // state: { fromDashboard: true }
-                                }}
+                                }
                                 ><button className='B-seachButton shadow-sm rounded-2 px-3 py-1'><RiSearchLine size={30} color={'#ffffff'} /></button></Link>
                                 {/* temp
                                             travel=${travel}&

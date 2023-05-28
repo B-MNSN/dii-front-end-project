@@ -1,8 +1,8 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { travel } from "./actions";
+import { travelReducer } from "./actions";
 
 export default createReducer([], {
-    [travel]: (state, action) => {
+    [travelReducer]: (state, action) => {
         state.push({ textTravel: action.payload.value, ...action.payload });
     }
 });

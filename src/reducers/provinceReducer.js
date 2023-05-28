@@ -1,8 +1,8 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { provinces } from './actions';
+import { provincesReducer } from './actions';
 
 export default createReducer([], {
-    [provinces]: (state, action) => {
+    [provincesReducer]: (state, action) => {
         state.push({key: action.payload.key, value: action.payload.value, ...action.payload});
     }
 });
