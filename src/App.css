@@ -41,3 +41,15 @@
   background-color: #02457A;
   color: #fff;
 }
+
+.dropdown-toggle::after {
+  display: unset !important;
+  margin-left: unset !important;
+  vertical-align: unset !important;
+  content: "";
+  border-top: unset !important;
+  border-right: unset !important;
+  border-bottom: unset !important;
+  border-left: unset !important;
+
+}
