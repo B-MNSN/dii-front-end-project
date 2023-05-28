@@ -1,11 +1,9 @@
 import { createReducer } from "@reduxjs/toolkit";
 import { departLocationReducer, updateDepartLocation } from "./actions";
 
-let textDepart='';
-
 export default createReducer([], {
     [departLocationReducer]: (state, action) => {
-        state.push({ text: textDepart, ...action.payload });
+        state.push({ text: action.payload.value, ...action.payload });
     },
     [updateDepartLocation]: (state, action) => {
         const departIndex = state.findIndex(
