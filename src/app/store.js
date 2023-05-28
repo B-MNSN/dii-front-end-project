@@ -6,6 +6,7 @@ import departDayReducer from '../reducers/departDayReducer';
 import departLocationReducer from '../reducers/departLocateReducer';
 import landLocationReducer from '../reducers/landLocateReducer';
 import planeClassReducer from '../reducers/planeClassResucer';
+import fetchFlights from '../reducers/fetchFlights';
 
 
 export default configureStore({
@@ -17,5 +18,6 @@ export default configureStore({
     departLocationReducer: departLocationReducer,
     landLocationReducer: landLocationReducer,
     planeClassReducer: planeClassReducer,
+    flights: fetchFlights,
   }
 });

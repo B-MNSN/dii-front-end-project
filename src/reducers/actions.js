@@ -9,3 +9,5 @@ export const departDayReducer = createAction('DEPART_DAY');
 export const dateArrivalReducer = createAction('DATE_ARRIVAL');
 export const updateDepartLocation = createAction('UPDATE_DEPART_LOCATION');
 export const updatePlaneClass = createAction('UPDATE_PLANE_CLASS');
+
+export const fetchFlights = createAction('FETCH_FLIGHTS');
