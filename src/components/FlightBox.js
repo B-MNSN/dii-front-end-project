@@ -5,7 +5,7 @@ import { RiLuggageDepositLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 
 function Flightbox({ flight }) {
-    console.log(flight);
+    // console.log(flight);
     return (
         <>
             <div className="bg-secondary bg-opacity-10 shadow-lg border border-1 mt-5 w-75 rounded-4">

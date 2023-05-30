@@ -3,7 +3,7 @@ import logo from '../logo.png';
 import styled from 'styled-components';
 
 function Ticket({ show, onHide, book, flight, className }) {
-    console.log(flight)
+    // console.log(flight)
     const propsSim = { show, onHide };
     return (
         <>

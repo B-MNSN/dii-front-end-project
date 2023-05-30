@@ -107,6 +107,7 @@ function BookingSearch({className}) {
     const travelSelect = useSelector(state => state.travel.textTravel);
     const planeClassSelect = useSelector(state => state.planeClass.planClass);
 
+    console.log(depart, land, travelSelect, planeClassSelect)
 
     return (
         <>

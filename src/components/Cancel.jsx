@@ -2,11 +2,11 @@ import axios from 'axios';
 import { Modal } from 'react-bootstrap';
 
 function Cancel({ show, onHide, bookID }) {
-    console.log(bookID);
+    // console.log(bookID);
     const simProps = { show, onHide }
     const confirmDelete = async () => {
         const res = await axios.delete(`http://localhost:8000/user/${bookID}`);
-        console.log(res);
+        // console.log(res);
         window.location.href = '/myBooking';
     }
     const colse = () => {
