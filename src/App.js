@@ -12,10 +12,13 @@ import AddDataUser from './components/AddDataUser';
 // import MyBooking from './components/MyBooking'; -> broken
 import SuccesBooking from './components/SuccesBooking';
 
+import GlobalStyle from './GlobalStyle';
+
 
 function App() {
   return (
     <>
+    <GlobalStyle/>
       <Routes>
         <Route path='/' element={<Login />} />
         <Route path='/login' element={<Login />} />

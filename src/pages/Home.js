@@ -3,7 +3,9 @@ import BookingSearch from "../components/BookingSearch";
 import { Container, Row, Card } from "react-bootstrap";
 import Navbar from "../components/Navbar";
 
-function Home() {
+import styled from 'styled-components';
+
+function Home({className}) {
   const mainPic = require("../Elements/airplane-bg.jpg");
   const TripDoiSuThep = require("../Elements/DoiSuThep.jpg");
   const TripBorLuang = require("../Elements/BorLuang.jpg");
@@ -14,7 +16,7 @@ function Home() {
   return (
     <>
       <Navbar />
-      <Container fluid="lg">
+      <Container fluid="lg" className={className}>
         <Row className="mt-3 mx-0 H-searchBoxContainer position-relative">
           <div className="H-searchBox d-flex justify-content-center position-absolute">
             <BookingSearch />
@@ -60,4 +62,19 @@ function Home() {
   );
 }
 
-export default Home;
+export default styled(Home)`
+  .H-mainPic {
+      width: 100%;
+      height: 24rem;
+      object-fit: cover;
+  }
+  .H-searchBox {
+    z-index: 1;
+    top: 19rem
+  }
+  .H-searchBoxContainer {
+    height: 32rem;
+    width: 100%;
+    max-width: 1440px;
+}
+`

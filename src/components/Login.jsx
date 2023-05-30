@@ -4,8 +4,9 @@ import logo from '../logo.png';
 import { useState } from 'react';
 import axios from 'axios';
 import Container from './Container';
+import styled from 'styled-components';
 
-function Login() {
+function Login({className}) {
     function onLoad() {
         localStorage.clear();
     }
@@ -33,7 +34,7 @@ function Login() {
     } else {
         return (
             <>
-                <div onLoad={onLoad} className='login-page d-flex align-items-center justify-content-center'>
+                <div onLoad={onLoad} className={`${className} d-flex align-items-center justify-content-center`}>
                     <Container>
                         <div className='row'>
                             <div className='col-12 d-flex justify-content-center'>
@@ -74,4 +75,24 @@ function Login() {
 
 }
 
-export default Login;
+export default styled(Login)`
+    background: linear-gradient(180deg, rgba(1, 138, 190, 0.6) 0%, rgba(32, 91, 138, 0.4) 100%);
+    height: 100vh;
+    
+    .login-bg {
+        width: 35%;
+        background: rgba(217, 217, 217, 0.5);
+        box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+    }
+
+    .tab-signin{
+        background: none;
+        border: none;
+    }
+
+    .tab-signin:hover{
+        color: #ffffff;
+        border-bottom: 3px solid #ffffff;
+    }
+`

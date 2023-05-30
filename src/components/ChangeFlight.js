@@ -6,8 +6,10 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { planeClass, departLocation, travel, landLocation } from '../reducers/actions';
 
+import styled from 'styled-components';
 
-function ChangeFlight({ show, onHide, setTemp }) {
+
+function ChangeFlight({ show, onHide, setTemp, className }) {
      const dispatch = useDispatch();
     const propSimulator = { onHide, show }
     const [departDay, setdepartDay] = useState(new Date());
@@ -92,7 +94,7 @@ function ChangeFlight({ show, onHide, setTemp }) {
     
 
     return (
-        <Modal {...propSimulator} size="xl" aria-labelledby="contained-modal-title-vcenter" centered>
+        <Modal {...propSimulator} size="xl" aria-labelledby="contained-modal-title-vcenter" centered className={className}>
             <Modal.Header closeButton className='topModal bg-opacity-10 btn-light'>
                 <Modal.Title id="contained-modal-title-vcenter">
                     <h2 className='ms-3 mt-1 mb-0 fw-bold'>เปลี่ยนเที่ยวบิน</h2>
@@ -189,4 +191,13 @@ function ChangeFlight({ show, onHide, setTemp }) {
 }
 
 
-export default ChangeFlight;
+export default styled(ChangeFlight)`
+    .btnChange, .topModal {
+        background-color: #02457A;
+        color: #ffffff;
+        
+    }
+    .topModal {
+        padding: 5px 50px;
+    }
+`

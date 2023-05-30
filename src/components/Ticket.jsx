@@ -1,7 +1,8 @@
 import { Modal } from 'react-bootstrap';
 import logo from '../logo.png';
+import styled from 'styled-components';
 
-function Ticket({ show, onHide, book, flight }) {
+function Ticket({ show, onHide, book, flight, className }) {
     console.log(flight)
     const propsSim = { show, onHide };
     return (
@@ -15,7 +16,7 @@ function Ticket({ show, onHide, book, flight }) {
                         </div>
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body className="ticket rounded-3">
+                <Modal.Body className={`${className} ticket rounded-3`}>
                     <div className='row mx-5 my-2'>
                         <div className='col-12 mb-4'>
                             <text className='me-3 fw-bold text-uppercase fs-5'>Name:</text>
@@ -52,4 +53,10 @@ function Ticket({ show, onHide, book, flight }) {
         </>
     )
 }
-export default Ticket;
+export default styled(Ticket)`
+    .ticket {
+        background-image: url("./bgAirplane.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+`

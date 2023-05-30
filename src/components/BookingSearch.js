@@ -8,8 +8,9 @@ import { Link } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { planeClass, departLocation, travel, landLocation } from '../reducers/actions';
+import styled from 'styled-components';
 
-function BookingSearch() {
+function BookingSearch({className}) {
 
     const dispatch = useDispatch();
 
@@ -109,7 +110,7 @@ function BookingSearch() {
 
     return (
         <>
-            <div className='rounded shadow bg-light d-flex justify-content-center'>
+            <div className={`${className} rounded shadow bg-light d-flex justify-content-center`}>
                 <Form onSubmit={onSearch}>
                     <Container className='py-3'>
                         <Row className='pb-3 d-flex justify-content-center'>
@@ -201,4 +202,9 @@ function BookingSearch() {
 // };
 
 
-export default BookingSearch;
+export default styled(BookingSearch)`
+    .B-seachButton {
+        border: none;
+        background: #02457A;
+    }
+`

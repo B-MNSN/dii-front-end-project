@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { FaUserCircle } from 'react-icons/fa';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../logo.png';
+import styled from 'styled-components';
 
 
 
@@ -32,4 +33,16 @@ function BasicExample({ className }) {
   );
 }
 
-export default BasicExample;
+export default styled(BasicExample)`
+  .dropdown-toggle::after {
+    display: unset !important;
+    margin-left: unset !important;
+    vertical-align: unset !important;
+    content: "";
+    border-top: unset !important;
+    border-right: unset !important;
+    border-bottom: unset !important;
+    border-left: unset !important;
+
+  }
+`
