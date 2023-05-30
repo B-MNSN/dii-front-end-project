@@ -33,7 +33,7 @@ function BookFlight() {
 
   // console.log(temp);
 
-  console.log(flights)
+  // console.log(flights)
   if (userStat?.username) {
     return (
       <>
