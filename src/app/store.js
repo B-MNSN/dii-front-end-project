@@ -8,7 +8,7 @@ import fetchFlights from '../reducers/fetchFlights';
 export default configureStore({
   reducer: {
     travel: travel,
-    departLocationr: departLocation,
+    departLocation: departLocation,
     landLocation: landLocation,
     planeClass: planeClass,
     flights: fetchFlights,

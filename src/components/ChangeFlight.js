@@ -80,10 +80,10 @@ function ChangeFlight({ show, onHide, setTemp }) {
         }
     };
    
-    const depart = useSelector(state => state.departLocationReducer.departLocate);
-    const land = useSelector(state => state.landLocationReducer.landLocate);
-    const travelSelect = useSelector(state => state.travelReducer.textTravel);
-    const planeClassSelect = useSelector(state => state.planeClassReducer.planClass);
+    const depart = useSelector(state => state.departLocation.departLocate);
+    const land = useSelector(state => state.landLocation.landLocate);
+    const travelSelect = useSelector(state => state.travel.textTravel);
+    const planeClassSelect = useSelector(state => state.planeClass.planClass);
 
     const repageSearch = () => {
         console.dir(window.location);

@@ -101,12 +101,10 @@ function BookingSearch() {
     };
 
 
-    const depart = useSelector(state => state.departLocationReducer.departLocate);
-    const land = useSelector(state => state.landLocationReducer.landLocate);
-    const travelSelect = useSelector(state => state.travelReducer.textTravel);
-    const planeClassSelect = useSelector(state => state.planeClassReducer.planClass);
-
-    console.log(depart, land, travelSelect, planeClassSelect);
+    const depart = useSelector(state => state.departLocation.departLocate);
+    const land = useSelector(state => state.landLocation.landLocate);
+    const travelSelect = useSelector(state => state.travel.textTravel);
+    const planeClassSelect = useSelector(state => state.planeClass.planClass);
 
 
     return (
