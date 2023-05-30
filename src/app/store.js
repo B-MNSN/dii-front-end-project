@@ -1,23 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
-import provincesReducer from '../reducers/provinceReducer';
-import travelReducer from '../reducers/travelReducer';
-import dataArrivalReducer from '../reducers/dateArrivalReducer';
-import departDayReducer from '../reducers/departDayReducer';
-import departLocationReducer from '../reducers/departLocateReducer';
-import landLocationReducer from '../reducers/landLocateReducer';
-import planeClassReducer from '../reducers/planeClassResucer';
+import travel from '../reducers/travel';
+import departLocation from '../reducers/departLocation';
+import landLocation from '../reducers/landLocattion';
+import planeClass from '../reducers/planeClass';
 import fetchFlights from '../reducers/fetchFlights';
-
 
 export default configureStore({
   reducer: {
-    provincesReducer: provincesReducer,
-    travelReducer: travelReducer,
-    dataArrivalReducer: dataArrivalReducer,
-    departDayReducer: departDayReducer,
-    departLocationReducer: departLocationReducer,
-    landLocationReducer: landLocationReducer,
-    planeClassReducer: planeClassReducer,
+    travel: travel,
+    departLocationr: departLocation,
+    landLocation: landLocation,
+    planeClass: planeClass,
     flights: fetchFlights,
   }
 });
