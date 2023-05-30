@@ -5,7 +5,11 @@ import { useState } from 'react';
 import propType from 'prop-types';
 import axios from 'axios';
 
+import { useDispatch } from "react-redux";
+import { addUser } from "../reducers/actions";
+
 function AddDataUser() {
+    const dispatch = useDispatch();
     let userStat = JSON.parse(localStorage.getItem('status'));
     const optionPrefix = [
         { value: 'นางสาว', text: 'นางสาว' },
@@ -31,15 +35,11 @@ function AddDataUser() {
         event.preventDefault();
         // addInform({fname, lname, phoneNumber, email});
         console.log({ prefix, fname, lname, phoneNumber, email, flightID });
-        axios.post('http://localhost:8000/user', {
-            prefix,
-            fname,
-            lname,
-            phoneNumber,
-            email,
-            flightID
-        }).then((response) => {
+        const userData = {prefix,fname,lname,phoneNumber, email,flightID,};
+        axios.post('http://localhost:8000/user', userData)
+        .then((response) => {
             console.log(response);
+            dispatch(addUser(userData));
             window.location.href='/myBooking'
         }).catch((error) => {
             console.log(error);

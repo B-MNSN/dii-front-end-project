@@ -1,19 +1,24 @@
 import BookBox from './BookBox';
 import Navbar from './Navbar';
-
 import { useState, useEffect } from 'react';
-
 import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUser } from '../reducers/actions';
+
+
 function SuccesBooking() {
     let userStat = JSON.parse(localStorage.getItem('status'));
-    const [books, setBooks] = useState([]);
+    // const [books, setBooks] = useState([]);
+    const books = useSelector((state) => state.fetchUsers);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         async function getBooks() {
             const books = await axios.get(
                 `http://localhost:8000/user`
             );
-            setBooks(books.data);
+            // setBooks(books.data);
+            dispatch(fetchUser(books.data))
         }
 
         getBooks();
